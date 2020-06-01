@@ -46,7 +46,7 @@ google_fonts: Lato
 google_analytics: UA-168136654-1
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
-disqus_shortname: ibtg
+disqus_shortname: https-ibtg-github-io
 
 # This text will appear in the footer of every page. Markdown enabled.
 copyright: "&copy; 2020. by ibtg"
