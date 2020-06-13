@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'Javascript의 this'
-subtitle: 'javascript this'
+title: '스크립트 태그의 async 와 defer'
+subtitle: 'html script tag async defer'
 categories: development
-tags: javascript
+tags: html
 comments: true
 ---
 
-- Javascript의 async와 defer에 대해서 정리한 글입니다.
+- script 태그의 async와 defer에 대해서 정리한 글입니다.
 
 ---
 
@@ -34,7 +34,7 @@ comments: true
 
 - 이때 자바스크립트 파일의 크기가 엄청 크다면 사용자가 웹 사이트를 보는데 많은 시간이 소비될 수 있기 때문에 script를 head에 포함하는 것은 좋은 방법은 아닙니다.
 
-![head](../assets/img/post_img/head.png?raw=true)
+<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/head.png?raw=true">
 
 ---
 
@@ -58,7 +58,7 @@ comments: true
 - 위 방법의 경우 html parsing이 끝나고 페이지가 준비가 된 다음에 js파일을 받은 다음 실행합니다
 - 사용자가 js 파일을 받아오기 전에 page에서 기본적인 HTML 볼 수 있다는 장점이 있지만 페이지가 js에 매우 의존적인 경우, 즉, 사용자가 의미있는 컨텐츠를 보기 위해서는 js 파일이 필요한 경우에는 시간이 오래걸린다는 단점이 있습니다
 
-![body](../assets/img/post_img/body.png?raw=true)
+<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/body.png?raw=true">
 
 ---
 
@@ -84,7 +84,7 @@ comments: true
 - 그리고 html을 parsing하는 동안 js를 실행하기 위해 parsing을 멈출 수 있기 때문에 사용자가 페이지를 보는데 여전히 시간이 조금 더 걸릴 수 있는 단점이 있습니다
 - 또한 async가 어려개 인 경우, 순서에 상관 없이 먼저 다운로드 된 js 파일을 먼저 실행하기 때문에 js가 순서에 의존적인 것이라면, 예를 들어 b 스크립트를 실행하는데 있어 a 스크립트가 선행되어야 한다면, async 옵션을 사용하는 것이 문제가 될 수 있다
 
-![async](../assets/img/post_img/async.png?raw=true)
+<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/async.png?raw=true">
 
 ---
 
@@ -107,7 +107,7 @@ comments: true
 - 그리고 defer은 script 태그가 여러개 있어서 js 파일을 포함하더라도 다운로드 시작한 순서대로 parsing이 끝난 후 차례대로 시작합니다.
 - 따라서 header defer 속성을 쓰는 방법이 위의 3가지 방법에 비해서 안전하고 더 효율적인 방법이라는 것을 알 수 있습니다
 
-![defer](../assets/img/post_img/defer.png?raw=true)
+<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/defer.png?raw=true">
 
 ---
 
