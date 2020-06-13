@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: HTML
-slug: CSS
+title: html
+slug: html
 category: development
 menu: false
 order: 2
