@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '리액트 handler Error: Maximum update depth exceeded." 에러를 해결하는 방법'
+title: '리액트 "handler Error: Maximum update depth exceeded." 에러를 해결하는 방법'
 subtitle: 'react handler Error'
 categories: development
 tags: react
@@ -17,7 +17,7 @@ comments: true
 
 - 아래 예제는 숫자가 1씩 증가하는 함수를 `<button>` element에서 onClick의 이벤트 헨들러로 호출하는 코드입니다.
 
-```javascript
+```jsx
 import React from 'react';
 
 class App extends React.Component {
@@ -58,15 +58,21 @@ export default App;
 - 에러를 해결하는 첫번째 방법은 함수의 소괄호`()` 없이 함수를 호출하는 것입니다.
 - 아래와 같이 코드를 작성하게 되면 이벤트 핸들러는 해당 버튼이 클릭이 된 경우에만 호출됩니다.
 
-```javascript
-<button onClick={this.add}>Add</button>
+```jsx
+<div>
+  <h1>Number {this.state.count}</h1>
+  <button onClick={this.add}>Add</button>
+</div>
 ```
 
 - 또 다른 해결 방법으로는 인라인 함수(inline function)를 사용할 수 있습니다.
 - 이 경우에는 소괄호`()`와 함께 함수를 호출합니다
 
-```javascript
-<button onClick={(e) => this.add()}>Minus</button>
+```jsx
+<div>
+  <h1>Number {this.state.count}</h1>
+  <button onClick={(e) => this.add()}>Add</button>
+</div>
 ```
 
 ---
