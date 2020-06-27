@@ -7,7 +7,7 @@ tags: javascript
 comments: true
 ---
 
-- Javascript의 async, wait에 대해서 정리한 글입니다
+- Javascript의 async, await에 대해서 정리한 글입니다
 
 ---
 
