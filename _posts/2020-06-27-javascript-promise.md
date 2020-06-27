@@ -7,7 +7,7 @@ tags: javascript
 comments: true
 ---
 
-- Javascript의 프로미스(Promise)에 대해서 정리한 글입니다
+- Javascript의 프로미스(Promise)에 대해서 정리한 글입니다.
 
 ---
 
