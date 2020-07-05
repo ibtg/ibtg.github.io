@@ -1,6 +1,6 @@
 ---
 layout: tag-blog
-title: css
+title: CSS
 slug: css
 category: development
 menu: false
