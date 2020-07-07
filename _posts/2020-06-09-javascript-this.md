@@ -438,7 +438,51 @@ element.addEventListener('click', function onclick(ev) {
 
 ---
 
+### 화살표 함수 (Arrow function)
+
+- `function` 을 이용한 함수 선언 방식에서 함수를 호출하는 방식에 따라 `this`값이 정해지는 것과 달리, ES6에서 새롭게 등장한 `화살표 함수`에서 `this`를 사용하면 항상 상위 스코프의 this를 가리킵니다
+
+* 아래 코드처럼 `new` 키워드를 통해 함수를 호출하면 return된 객체가 `_func`가 되고 `this`는 자신이 return 된 객체를 가리키게 됩니다
+
+- 따라서 `function`으로 선언한 함수의 `this`는 return 된 객체를 가리키기 때문에 `this.name`을 출력하면 `func2`가 출력됩니다
+
+```javascript
+function funcOne() {
+  this.name = 'func1';
+  return {
+    name: 'func2',
+    func: function () {
+      console.log(this.name);
+    },
+  };
+}
+
+const _func = new funcOne(); // 반환된 객체가 _func가 된다
+_func.func(); // func2
+```
+
+- 첫번째 코드와 달리, 아래 코드에서는 `new` 키워드를 통해 함수를 호출하더라도 `this.name`으로 `func1`가 출력됩니다
+
+- 그 이유는 화살표 함수에서 선언된 `this`는 함수를 정의할 때 상위 스코프의 `this`를 가르키기 때문에 `this.name`은 `func1`이 됩니다.
+
+```javascript
+function funcTwo() {
+  this.name = 'func1';
+  return {
+    name: 'func2',
+    func: () => {
+      console.log(this.name); // this는 상위 스코프인 return 으로 반환되는 객체
+    },
+  };
+}
+
+const _func2 = new funcTwo();
+_func2.func(); // func1
+```
+
+---
+
 ## Reference
 
 - [MDN web docs - this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)
-- https://poiemaweb.com/js-this
+- [https://poiemaweb.com/js-this](https://poiemaweb.com/js-this)
