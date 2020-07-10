@@ -201,6 +201,7 @@ div {
 ### [https://flukeout.github.io/](https://flukeout.github.io/)의 문제를 풀고 정리한 내용
 
 ```css
+/* 형제 관계이면서 바로 뒤에 인접해 있는 인접 형제 선택자는 + 기호를 넣어준다 */
 /* plate element를 바로 뒤따르는 apple element 를 선택한다. 
 이 때 plate와 apple 사이에 다른 element가 있으면 apple element가 선택되지 않는다 */
 plate + apple {
@@ -211,10 +212,12 @@ plate + apple {
 plate ~ apple {
 }
 
+/* 자손 선택자는 선택자 사이에 아무 기호 없이 공백으로 구분한다 */
 /* plate element 아래 있는 여러 elment 중에 apple element 를 선택한다  */
 plate apple {
 }
 
+/* 자식 선택자는 > 기호를 선택자 사이에 넣어준다 */
 /* plate element의 바로 아래의 자식 element인 apple element 를 선택한다  */
 plate > apple {
 }
