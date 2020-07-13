@@ -7,7 +7,7 @@ tags: sass
 comments: true
 ---
 
-- SASS에 대해서 공부하고 정리한 글입니다
+- SASS에 대해서 공부하고 정리한 글입니다.
 
 ---
 
