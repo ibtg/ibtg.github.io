@@ -318,10 +318,15 @@ export default App;
 ```jsx
 import React, { Component, useState, useEffect, useRef } from 'react';
 
+//useEffect는 여기서 componentDidMount이다
+//render 함수 호출 후에 호출된다
+//따라서 title은 이미 useRef를 통해 변경가능한 객체를 반환받았고
+// 그렇기 때문에 후에 호출된 useEffect 함수를 호출할 때 element.current가 h1태그를 나타내는 것이다
+
 const useClick = (onClick) => {
   const element = useRef(); // 변경가능한 ref 객체를 반환한다
   useEffect(() => {
-    console.log('element curent: ', element.current);
+    console.log('element curent: ', element.current); // 변경가능한 ref 객체를 반환한다
     //componentDidMount
     if (element.current) {
       element.current.addEventListener('click', onClick);
@@ -340,6 +345,8 @@ function App() {
   const sayHello = () => console.log('say hello');
 
   const title = useClick(sayHello);
+  // 아래 ref={title} 때문에, 이제 title에 점근할 수 있다
+  //element를 반환받기 때문에 사실상 title = useRef()와 같다
   return (
     <div className="App">
       <button ref={title}>Hi</button>
