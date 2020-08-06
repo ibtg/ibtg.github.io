@@ -462,3 +462,4 @@ store.subscribe(red);
 ## Reference
 
 - [생활코딩 - Redux](https://opentutorials.org/module/4078)
+- [코드](https://github.com/ibtg/redux-opentutorials)
