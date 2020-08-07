@@ -19,6 +19,8 @@ comments: true
 
 - 다음과 같이 B 원격 저장소의 1번 커밋(upstream)과 A 원본 저장소의 2번 커밋(master)을 합치려고 할 때 충돌이 나는 경우
 
+- upstream은 원본저장소를 지칭하는 관용적 닉네임이다
+
  <img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-08-06-git-rebase1.png?raw=true">
 
 - 커밋1과 커밋2의 충돌을 해결해서 만들어진 커밋3(병합커밋)은 커밋 2와 문제 없이 병합할 수 있다
