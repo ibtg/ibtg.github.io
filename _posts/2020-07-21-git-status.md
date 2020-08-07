@@ -164,6 +164,54 @@ $ git status # 워킹 트리 상태 확인
 
 ---
 
+### 원격저장소 관련 명령어(remote, push, pull)
+
+- 로컬 저장소를 원격 저장소에 Push하기 위해서는 원격 저장소를 깃허브에서 만들어 등록한다
+
+```bash
+$ git remote add <원격저장소 이름> <원격 저장소 주소>
+# 원격 저장소를 등록한다
+# 원격 저장소는 여러 개 등록할 수 있지만 같으 별명의 원격저장소는 하나만 가질 수 있다
+# 통상 첫번째 원격저장소를 origin으로 지정한다
+
+$ git remote -v
+# 원격 저장소 목록을 살펴본다
+
+$ git push -u origin master
+# push와 동시에 업스트림 지정
+```
+
+```bash
+$ git remote add origin "원격 저장소 주소"
+
+$ git remote -v
+
+$ git push
+# 에러 발생, [master] 브랜치와 연결된 원격 저장소의 브랜치가 없어서 발생한 오류
+# 이전에는 git push origin master 와 같이 사용
+
+$ git push -u origin master # push와 동시에 업스트림 지정
+
+$ git log --oneline -n1
+# e0044ee (HEAD -> master, origin/master)
+# 지금 HEAD가 가르키는 [master]는 로컬의 [master] 브랜치이고, [origin/maser]는
+# 원격 저장소인 GitHub의 마스터 브랜치이다
+# 현재 상태는 HEAD, master, origin/master 모두 e0044ee 커밋을 가리키고 있다
+
+$ git push # Everything up-to-date
+
+```
+
+- 업스트림(upstream)브랜치는 로컬저장소와 연결된 원격 저장소를 일컫는 단어
+
+- 업스트림 브랜치 설정을 위해서 —set-upstream 또는 -u 옵션을 사용한다
+
+- 그러면 origin 저장소의 [master] 브랜치가 로컬 저장소의 [master] 브랜치의 업스트림으로 지정되어 git push 명령어만으로도 에러 없이 push가 가능해 진다
+
+- 대개 git bash에서 긴 명령은 대시 두 개`(--)` 짧은 명령은 대시 한 개로 시작하는 경우가 많다
+
+---
+
 ## Reference
 
 - [팀 개발을 위한 Git, Github 시작하기](http://www.yes24.com/Product/Goods/85382769)
