@@ -129,6 +129,23 @@ git reset [파일명]
 
    <img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-08-06-git-commit-edit8.png?raw=true">
 
+- revert를 사용해서 커밋을 되돌려야 하는 경우
+
+```bash
+
+C1 <--- F1 <--- C2 <--- F2 <--- C3(master)
+# F1과 F2를 취소하고 싶은 경우 revert를 사용해서 이를 해결 할 수 있다
+
+$ git revert F2
+$ git revert F1
+
+C1 <--- F1 <--- C2 <--- F2 <--- C3 <--- RF2 <--- RF1(master)
+# git revert를 실행할 때는 최신 커밋 부터 취소를 하는 것이 좋다
+# 이렇게 하면 F2와 F!을 취소하는 커밋(RF2, RF1)을 각각 만들어 낸다
+# 이전의 히스토리를 변경하지 않고도 깔끔하게 히스토리 중간의 여러 커밋 내용을
+# 작업 이전 상태로 되돌릴 수 있으므로 현업에서도 유용하게 사용한다
+```
+
 ---
 
 ### stash
