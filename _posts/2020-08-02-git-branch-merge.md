@@ -400,6 +400,36 @@ git fetch [원격저장소별명] [브랜치이름]
 
 ---
 
+- 배포 버전에 태깅하기
+
+  - 태그에는 주석이 있는 태그와 간단한 태그 두 종류가 있다
+
+  - 태그는 차후에 커밋을 식별할 수 있는 유용한 정보
+
+  - 태그를 사용하면 GitHub의 [Tags] 탭에서 확인할 수 있고, [Release] 탭에서 다운 받을 수 있다
+
+```bash
+git tag -a -m <간단한 메시지> <태그 이름> [브랜치 또는 체크섬]
+# -a로 주석있는(annotated) 태그를 생성한다
+# 메시지와 태그 이름은 필수이며 브랜치 이름을 생략하면 HEAD에 태그를 생성한다
+
+git push <원격 저장소 별명> <태그 이름>
+# 원격 저장소에 태그르 업로드 한다
+
+```
+
+```bash
+$ git log --oneline # 로그 확인
+
+$ git log -a -m "첫 번째 태그 생성" v0.1
+
+$ git log --oneline # 태그  생성 확인
+
+$ git push origin v0.1 # 태그 푸시
+```
+
+---
+
 ## Reference
 
 - [팀 개발을 위한 Git, Github 시작하기](http://www.yes24.com/Product/Goods/85382769)
