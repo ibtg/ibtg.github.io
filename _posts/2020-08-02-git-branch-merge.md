@@ -343,6 +343,110 @@ git fetch [원격저장소별명] [브랜치이름]
 
 ---
 
+### 3-way 병합하기
+
+- 버그를 발견한 상황에서 버그 수정은 다음과 같은 단계로 이루어 진다
+
+  1. (옵션) 오류가 없는 버전(주로 Tag가 있는 커밋)으로 롤백
+
+  2. `[master]` 브랜치로부터 `[hotfix]`브랜치 생성
+
+  3. 빠르게 소스 코드 수정 / 테스트 완료
+
+  4. `[master]` 브랜치로 병합 (Fast-forward) 및 배포
+
+  5. 개발 중인 브랜치에도 병합 (충돌 발생 가능성이 높음)
+
+- 버그가 발생한 상황에서는 원래 작업 중이던 브랜치도 `[master]` 브랜치로 부터 시작했기 때문에 같은 버그를 가지고 있을 것이다
+
+- 때문에 `[hotfix]` 브랜치의 내용은 `[master]` 브랜치와 개발 브랜치 모두에 병합 되어야 한다
+
+- 보통 `[master]` 브랜치의 병합은 빨리 감기이기 때문에 쉽게 되는 반면 개발 중인 브랜치의 병합은 병합 커밋이 생성되고 충돌이 일어날 가능성이 높다
+
+```bash
+$ git checkout master
+
+$ git checkout -b feature1 # 브랜치 생성 및 체크아웃
+
+$ echo "기능 1 추가" >> file1.txt
+
+$ git add file1.txt
+
+$ git commit
+
+$ git log --oneline --all --graph -n2
+
+```
+
+- 위 상황에서 커밋한 이후 장애가 발견되었을 때
+
+- `[master]` 브랜치에서 `[hotfix]` 브랜치를 만들고 버그를 고친 후에 커밋을 한다
+
+- 그리고 `[hotfix]`브랜치를 `[master]`브랜치에 병합한다
+
+- `[master]`브랜치의 최신 커밋을 기반으로 `[hotfix]` 브랜치 작업을 했기 때문에 빨리 감기 병합이 가능하다
+
+- 따라서, 아래처럼, `[hotfix]` 브랜치를 만들고 버그를 해결한 다음 `[master]` 브랜치와 Merge한다
+
+```bash
+
+$ git checkout -b hotfix master # master로 부터 hotfix브랜치 생성, 체크아웃
+
+$ git log --oneine --all -ne # 2개의 커밋 로그만 보기
+
+$ echo "some hot fix" >> file1.txt
+
+$ git add file1.txt
+
+$ git commit
+
+$ git log --oneline -n1
+
+$ git checkout master
+
+$ git merge hotfix
+
+$ git push
+
+```
+
+- hotfix 커밋은 버그 수정이었기 때문에 이 내용을 현재 개발 중인 `[feature1]` 브랜치에도 반영해야 한다
+
+- `[feature1]` 브랜치와 `[master]` 브랜치은 서로 다른 분기로 진행되고 있다.
+
+- 이 경우에는 빨리 감기 병합이 불가능 하므로 `3-way` 병합을 해야한다
+
+- 따라서 병합 커밋이 생성된다
+
+- 모든 `3-way` 병합이 충돌을 일으키는 것은 아니지만 두 브랜치 모두 file1.txt를 수정했기 때문에 충돌이 발생한다
+
+```bash
+$ git checkout feature1 # 개발 중인 브랜치로 checkout
+
+$ git log --oneline --all
+
+$ git merge master # master 브랜치와 병합
+# 충돌 발생
+
+$ git status # 실패 원인 파악
+
+# visual studio (editor)를 열어서 충돌이 일어난 부분을 수정한 후
+# 변경 내용을 저장하고 다시 스테이지에 추가 및 커밋을 하면 수동으로 3-way 병합이 완료된다
+
+$ cat file1.txt # 변경 내용확인
+
+$ git add file1.txt
+
+$ git status
+
+$ git commit # git commi 명령으로 충돌난 3 way 병합을 마무리 짓는다
+
+$ git log --oneline --all --graph -n4
+
+```
+
+---
+
 - 풀 리퀘스트 (Pull request)
 
   - 협력자에게 브랜치 병합을 요청하는 메세지를 보내는 것
