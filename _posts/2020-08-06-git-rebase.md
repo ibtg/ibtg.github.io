@@ -157,7 +157,7 @@ $ git merge feature1 # 한 줄이 되었기 때문에 빨리감기 병합을 한
 
 ---
 
-<img src = "4?raw=true">
+<img src = "https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-08-06-git-rebase6.png?raw=true">
 
 - 위의 예시처럼 master 브랜치만 사용했는데도 뻗어나오는 가지가 생기는 경우가 있다
 
