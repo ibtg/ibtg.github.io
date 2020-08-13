@@ -19,20 +19,27 @@ comments: true
 
 - 프로미스는 콜백 함수(Callback Function) 대신 유용하게 사용할 수 있다는 장점이 있습니다.
 
+- 프로미스 이해할 때 state, 그리고 우리가 원하는 데이터를 제공하는 producer와 제공한 데이터를 소비하는 consumer애 대한 개념을 이해하는 것이 중요합니다
+
 ---
 
 ### States
 
 - 프로미스는 다음 중 하나의 state를 가집니다
-- Pending : 작업 수행 중
-- Fulfilled : 작업이 성공적으로 끝남
-- Reject : 요청하는 파일 찾을 수 없거나 네트워크에 문제가 발생한 경우
+
+  - Pending : 작업 수행 중
+
+  - Fulfilled : 작업이 성공적으로 끝남
+
+  - Rejected : 요청하는 파일 찾을 수 없거나 네트워크에 문제가 발생한 경우
 
 ---
 
 - 프로미스 생성자 함수는 비동기 작업을 수행할 콜백 함수를 인자로 전달 받고 콜백 함수는 `resolve`와 `reject` 함수를 인자로 전달받습니다
 
-- 프로미스는 만들어 지는 순간 바로 콜백 함수를 실행하게 됩니다.
+- `resolve` 는 기능을 정상적으로 수행해서 마지막으로 정상적인 데이터를 전달하는 함수이고 `reject` 는 기능을 수행하다가 중간에 문제가 생기면 호출하는 함수입니다
+
+- 프로미스는 만들어 지는 순간 프로미스에 전달된 executor 콜백함수가 바로 실행됩니다
 
 - 따라서 만약 사용자가 요구하는 경우에만 네트워크 연결을 하는 기능을 구현하고 싶은 경우 프로미스의 콜백 함수에 해당 기능을 구현한다면 불필요한 네트워크 요청이 일어날 수 있습니다
 
@@ -53,6 +60,7 @@ console.log(user);
 - 아래는 2초 후 작업이 성공하면 success, 실패하면 error 메시지를 보여주는 코드 입니다.
 
 ```javascript
+// Producer
 const promise = new Promise((resolve, reject) => {
   console.log('doing someting');
 
@@ -74,6 +82,7 @@ const promise = new Promise((resolve, reject) => {
 - 프로미스 작업을 수행한 다음, 프로미스 상태의 결과값을 `then, catch, finally`을 통해 받을 수 있습니다
 
 - `then`은 프로미스가 성공적으로 수행한 다음 `resolve`의 함수를 인자로 전달받습니다
+
 - 따라서 아래 코드의 `value`로 `'success !'`가 전달됩니다
 
 - 위 코드에서 에러가 발생한 경우 `Uncaught (in promise) Error: error !`가 콘솔 창에 출력됩니다.
@@ -82,10 +91,14 @@ const promise = new Promise((resolve, reject) => {
 
 - 마지막 `finally`는 프로미스의 성공, 실패 여부에 상관 없이 실행됩니다
 
+- 이 때, `then`, 프로미스를 리턴할 수도 있는데 만약 `then`에서 리턴환 프로미스가 에러가 발생하게 되면 `catch` 를 써서 에러를 잡을 수 있다
+
 ```javascript
+// Consumer
 promise
   .then((value) => {
     console.log(value);
+    // Producer 코드에서 resolve의 인자로 전달된 값이 value가 된다
   })
   .catch((error) => {
     console.log(error);
@@ -101,8 +114,12 @@ promise
 ### Promise Chaining
 
 - 아래 코드 처럼 `then`을 여러개 묶어서 비동기 요소들을 처리할 수 있습니다.
+
 - 첫번째 `then`의 결과 값 `4`가 두번째 `then`으로 전달되고, 두번째 `then`의 결과 값 `6`이 세번째 `then`으로 전달됩니다
+
 - 그리고 세번째 `then`에서는 새로운 프로미스가 만들어지고, 성공적으로 작업이 끝나고 나면 `num - 1` 의 결과 값 5를 마지막 `then`으로 전달하므로 최종적으로 `5`가 출력됩니다
+
+- 세번째 then에서처럼, then은 값을 바로 전달하는 것 뿐 아니라 프로미스를 전달할 수도 있다
 
 ```javascript
 const fetchNumber = new Promise((resolve, reject) => {
