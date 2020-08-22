@@ -463,7 +463,9 @@ _func.func(); // func2
 
 - 첫번째 코드와 달리, 아래 코드에서는 `new` 키워드를 통해 함수를 호출하더라도 `this.name`으로 `func1`가 출력됩니다
 
-- 그 이유는 화살표 함수에서 선언된 `this`는 함수를 정의할 때 상위 스코프의 `this`를 가르키기 때문에 `this.name`은 `func1`이 됩니다.
+* 그 이유는 화살표 함수에서 선언된 `this`는 함수를 정의한 상위 스코프의 `this`를 가르키기 때문에 `this.name`은 `func1`이 됩니다.
+
+- 즉, 화살표 함수는 `this`에 바인딩되는 객체가 동적으로 결정되는 것이 아니라 렉시컬 스코프의 방식처럼 언제나 상위 스코프의`this` 가르킵니다
 
 ```javascript
 function funcTwo() {
@@ -478,6 +480,31 @@ function funcTwo() {
 
 const _func2 = new funcTwo();
 _func2.func(); // func1
+```
+
+- 이러한 화살표함수의 특징 때문에 아래 예시처러 화살표하수를 사용하게 되면, 이 때 this는 전역객체를 가리키게 됩니다
+
+```javascript
+const person = {
+  name: 'kim',
+  sayHi: () => console.log(`Hi ${this.name}`),
+};
+
+person.sayHi(); // Hi undefined
+```
+
+- 따라서 이러한 경우에는 ES6의 축약메소드 사용방법을 따라 아래와 같이 코드를 작성하는 것이 좋습니다
+
+```javascript
+// Good
+const person = {
+  name: 'kim',
+  sayHi() {
+    console.log(`Hi ${this.name}`);
+  },
+};
+
+person.sayHi(); // Hi Kim
 ```
 
 ---
