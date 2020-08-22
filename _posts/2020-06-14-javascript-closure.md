@@ -135,6 +135,62 @@ for (var _i = 0; _i < arr.length; _i++) {
 
 ---
 
+- 아래는 클로저를 활용할 수 있는 예제입니다.
+
+```html
+<body>
+  <button class="button">+</button>
+  <span class="count">0</span>
+
+  <script>
+    const Btn = document.querySelector('.button');
+    const count = document.querySelector('.count');
+    const increase = (function () {
+      let counter = 0;
+
+      return function () {
+        return ++counter;
+      };
+    })();
+
+    Btn.addEventListener('click', () => {
+      count.innerText = increase();
+    });
+  </script>
+</body>
+```
+
+- 전역변수를 사용하는 대신, 즉시 실행함수를 통해 변수를 선언하고 함수를 리턴하면, 반환된 함수를 실행 할 때 마다 즉시 실행 함수 안에 있는 변수에 접근할 수 있기 때문에 전역 변수를 사용할 때 보다 더 안전하게 코드를 작성할 수 있습니다
+
+---
+
+- 또 다른 예제는 아래처럼 정보를 은닉할 수 있습니다.
+
+```html
+<script>
+  function Count() {
+    let count = 0;
+
+    this.increase = function () {
+      return count++;
+    };
+
+    this.decrease = function () {
+      return count--;
+    };
+  }
+
+  const counter = new Count();
+  console.log(counter.increase());
+  console.log(counter.decrease());
+</script>
+```
+
+- count 변수는 this로 선언되지 않았기 때문에 인스턴스를 통해 외부에서 접근할 수 없습니다.
+- 하지만 increase와 decrease 함수는 인스턴스 메소드이고, 클로저이기 때문에 count 변수에 접근할 수 있습니다.
+
+---
+
 ## Reference
 
 - [MDN web docs](<[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)>)
