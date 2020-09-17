@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 콜백(Callback) 함수 '
 subtitle: 'javascript callback'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

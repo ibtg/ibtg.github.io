@@ -2,7 +2,7 @@
 layout: post
 title: '리액트 "handler Error: Maximum update depth exceeded." 에러를 해결하는 방법'
 subtitle: 'react handler Error'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

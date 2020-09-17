@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 클래스(class) '
 subtitle: 'javascript class'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

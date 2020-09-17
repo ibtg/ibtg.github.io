@@ -2,7 +2,7 @@
 layout: post
 title: 'SASS - mixin, include, interpolation'
 subtitle: 'sass mixin'
-categories: development
+categories: frontend
 tags: sass
 comments: true
 ---

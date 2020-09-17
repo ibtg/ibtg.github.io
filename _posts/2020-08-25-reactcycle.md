@@ -2,7 +2,7 @@
 layout: post
 title: 'React 컴포넌트의 LifeCycle Method'
 subtitle: 'react ref'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

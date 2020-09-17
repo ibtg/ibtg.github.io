@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 JSON '
 subtitle: 'javascript json'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

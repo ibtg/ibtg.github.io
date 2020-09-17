@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript immutability'
 subtitle: 'javascript immutability'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

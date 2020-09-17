@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 var, let, const '
 subtitle: 'javascript variable'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

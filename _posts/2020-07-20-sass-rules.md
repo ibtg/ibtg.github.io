@@ -2,7 +2,7 @@
 layout: post
 title: 'SASS - @rules '
 subtitle: 'sass rules'
-categories: development
+categories: frontend
 tags: sass
 comments: true
 ---

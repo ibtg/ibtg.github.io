@@ -2,7 +2,7 @@
 layout: post
 title: 'Call Stack, Task Queue, Microtask Queue에서의 Event Loop'
 subtitle: 'javascript queue'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 'JavaScript의 클로저(Closure)'
 subtitle: 'closure'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

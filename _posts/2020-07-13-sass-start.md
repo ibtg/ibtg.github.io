@@ -2,7 +2,7 @@
 layout: post
 title: 'SASS 시작하기 - 기본 옵션, 변수, 선택자'
 subtitle: 'sass start'
-categories: development
+categories: frontend
 tags: sass
 comments: true
 ---

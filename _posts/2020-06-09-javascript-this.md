@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 this'
 subtitle: 'javascript this'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

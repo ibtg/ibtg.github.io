@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 redux'
 subtitle: 'javascript redux'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

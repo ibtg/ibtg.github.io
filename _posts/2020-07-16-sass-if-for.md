@@ -2,7 +2,7 @@
 layout: post
 title: 'SASS - 조건문, 반복문'
 subtitle: 'sass if-for'
-categories: development
+categories: frontend
 tags: sass
 comments: true
 ---

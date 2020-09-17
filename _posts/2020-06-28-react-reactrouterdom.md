@@ -2,7 +2,7 @@
 layout: post
 title: 'React의 React Router DOM '
 subtitle: 'react react router dom'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

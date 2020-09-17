@@ -2,7 +2,7 @@
 layout: post
 title: 'SASS - @extend, %PLACEHOLDER '
 subtitle: 'sass extend'
-categories: development
+categories: frontend
 tags: sass
 comments: true
 ---

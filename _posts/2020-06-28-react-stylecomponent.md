@@ -2,7 +2,7 @@
 layout: post
 title: 'React에서 Styled Components 사용하기'
 subtitle: 'react styled components'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

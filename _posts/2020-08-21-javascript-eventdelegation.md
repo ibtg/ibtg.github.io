@@ -2,7 +2,7 @@
 layout: post
 title: 'Event Capturing & Bubbling 그리고 Event deleation'
 subtitle: 'javascript event delegation'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

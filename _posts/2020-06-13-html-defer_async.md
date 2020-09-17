@@ -2,7 +2,7 @@
 layout: post
 title: '스크립트 태그의 async 와 defer'
 subtitle: 'html script tag async defer'
-categories: development
+categories: frontend
 tags: html
 comments: true
 ---

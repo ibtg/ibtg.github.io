@@ -2,7 +2,7 @@
 layout: post
 title: 'li 태그 안에서 들여쓰기 하는 법'
 subtitle: 'list inednt '
-categories: development
+categories: frontend
 tags: css
 comments: true
 ---

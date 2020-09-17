@@ -2,7 +2,7 @@
 layout: post
 title: 'React의 훅(Hooks)'
 subtitle: 'react hooks'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

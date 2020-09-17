@@ -2,7 +2,7 @@
 layout: post
 title: 'CSS - position 속성과 selector'
 subtitle: 'css position'
-categories: development
+categories: frontend
 tags: css
 comments: true
 ---

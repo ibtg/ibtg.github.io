@@ -2,7 +2,7 @@
 layout: post
 title: 'Javascript의 async & await '
 subtitle: 'javascript async wait'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

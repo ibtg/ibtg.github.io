@@ -2,7 +2,7 @@
 layout: post
 title: 'React redux'
 subtitle: 'react redux'
-categories: development
+categories: frontend
 tags: react
 comments: true
 ---

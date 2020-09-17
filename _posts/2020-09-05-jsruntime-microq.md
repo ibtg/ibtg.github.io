@@ -2,7 +2,7 @@
 layout: post
 title: '브라우저 런타임 환경의 이해 - Microtask Queue, Render'
 subtitle: 'javascript MicroQ rnder'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---

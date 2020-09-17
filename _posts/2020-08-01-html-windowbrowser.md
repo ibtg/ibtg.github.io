@@ -2,7 +2,7 @@
 layout: post
 title: 'window size와 브라우저 좌표를 구하는 방법'
 subtitle: 'window size browser coordinates'
-categories: development
+categories: frontend
 tags: html
 comments: true
 ---
