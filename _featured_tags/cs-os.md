@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: essay
-slug: essay
-category: essay
+title: OS
+slug: os
+category: cs
 menu: false
 order: 1
 ---

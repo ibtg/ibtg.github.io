@@ -2,7 +2,7 @@
 layout: tag-blog
 title: React
 slug: react
-category: development
+category: frontend
 menu: false
-order: 2
+order: 4
 ---

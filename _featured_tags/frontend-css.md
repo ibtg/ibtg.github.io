@@ -2,7 +2,7 @@
 layout: tag-blog
 title: CSS
 slug: css
-category: development
+category: frontend
 menu: false
-order: 4
+order: 3
 ---

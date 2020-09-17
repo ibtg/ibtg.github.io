@@ -2,7 +2,7 @@
 layout: tag-blog
 title: SASS
 slug: sass
-category: development
+category: frontend
 menu: false
 order: 5
 ---
