@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Javascript
 slug: javascript
-category: development
+category: frontend
 menu: false
 order: 1
 ---
