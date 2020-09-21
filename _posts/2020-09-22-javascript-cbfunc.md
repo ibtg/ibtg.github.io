@@ -2,7 +2,7 @@
 layout: post
 title: '자바스크립트 클래스와 this 바인딩 '
 subtitle: 'javascript this binding'
-categories: development
+categories: frontend
 tags: javascript
 comments: true
 ---
