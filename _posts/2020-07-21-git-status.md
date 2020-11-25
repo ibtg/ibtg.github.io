@@ -56,11 +56,11 @@ $ git remote add origin "원격 저장소 주소"
 
 ---
 
-- 워킹트리(working tree)
+- 워킹 디렉토리(working Directory)
 
   - 일반적으로 사용자가 파일과 하위 폴더를 만들고 작업 결과물을 저장하는 곳
 
-  - 일반적인 작업 폴더를 git 용어로 워킹트리라고 한다
+  - 일반적인 작업 폴더를 git 용어로 워킹 디렉토리(또는 워킹트리)라고 한다
 
   - 작업 폴더에서 [.git]폴더 (로컬저장소)를 뺀 나머지 부분을 말한다
 
@@ -82,6 +82,8 @@ $ git remote add origin "원격 저장소 주소"
 
   - 공식문서에서는 로컬저장소와 git 저장소를 같은 뜻으로 사용하고 있다
 
+  - 즉, 워킹 디렉토리에서 작업을 하고, `add`명령어를 통해서 staging area에 올리고 `commit`명령어를 사용해서 Git 저장소에 버전을 추가한다
+
 ---
 
 - git status는 git 저장소의 상태를 알려주는 명령어
@@ -96,6 +98,13 @@ $ git status
 # git status 명령 보다 짧게 요약해서 상태를 보여주는 명령어로,
 # 변경된 파일이 많을 때 유용하다
 $ git status -s
+
+# 아래와 같은 방법으로 git status를 git st로 줄여서 쓸 수 있다
+$ git config --global alias.st status
+
+# git 관련된 명령어 볼 수 있다
+$ git config --h
+
 ```
 
 - git status 명령어는 git 저장소(정확하게는 워킹트리)에서만 정상적으로 수행되는 명령어이다
@@ -110,6 +119,7 @@ $ git init
 $ ls -a # [.git] 폴더 확인 가능
 
 $ git status # 워킹 트리 상태 확인
+
 
 ```
 
@@ -138,6 +148,10 @@ $ git status # 워킹 트리 상태 확인
 
    - 한번도 커밋되지 않은 파일
 
+   - 워킹 디렉토리의 파일은 tracked와 untracked로 나눌 수 있다
+
+   - tracked 는 git이 tracking 하고 있는 파일이고 untracked는 새로 만든 파일처럼 파일에 대한 정보가 아직 없고 git이 tracking 하지 않은 파일이다
+
 2. 스테이지 됨(staged)
 
    - add 명령어를 통해 스테이지에 파일을 올린 상태
@@ -156,11 +170,133 @@ $ git status # 워킹 트리 상태 확인
 
    - 커밋된 파일을 수정한 경우 modified로 파일 상태가 변한다
 
-   - 파일 상태가 '수정 없음'인 파일은 변경사항이 없기 때문에 스테이지로 올릴 수 없다
+   - git이 tracking 하고 있는 파일 중에서도 수정이 되었는지 유무에 따라 unmodified , modified로 나눌 수 있고 파일 상태가 'modified'인 파일은 변경사항이 없기 때문에 스테이지로 올릴 수 없다
 
    - 하지만 untracked 또는 modified 파일을 스테이지에 올리면 수정 없음 파일은 add 하지 않았지만 변경사항이 없기 때문에 같이 스테이지에 올라가게 된다.
 
    - 그리고 commit을 해서 새로운 버전을 만들면 git은 계산을 통해 앞 commit과 비교해서 어떠한 부분이 달라졌는지 알아낼 수 있다
+
+```bash
+# 모든 파일(a.txt, b.txt, c.txt)을 staging area에 추가
+$ git add *
+
+# a.txt라는 파일 삭제하고 git add * 하면 삭제된 a.txt라는 파일은 워킹 디렉토리에 없었기 때문에
+# git staging area에 a라는 파일이 삭제된 상태가 추가 되지 않은 것을 확인할 수 있다
+$ rm a.txt
+$ git add *
+
+
+# 하지만 아래와 같이 . 로 add 명령어를 수행하면 a.txt 파일이 삭제된 상태를 포함해서
+# 모든 파일들이 staing area에 추가한다
+$ git add .
+
+# css파일만 추가하고 싶을 때
+$ git add *.css
+
+# staging area에 있는 파일들을 다시 unstage할 수 있다
+$ git rm --cached "파일이름"
+
+# state area에 있는 모든 파일을 unstage 한다
+$ git rm --cached *
+
+
+# git과 github에 추가하고 싶지 않은 파일들 git ignore에 추가한다
+
+$ echo *.log > .gitignore
+
+# 또한 아래처럼 파일을 열어서 아래와 같이 추가하고 싶지 않은 파일을 타이핑 할 수도 있다
+# *.log
+# build/
+# build/.log
+
+# mac
+open .gitignore
+
+# window
+stat .gitignore
+
+```
+
+- git diff
+
+  - git status를 통해서 파일의 상태를 확인할 수 있지만 어떠한 내용이 변경되었는지 알 수 없다
+  - 하지만 git diff를 통해서 어떤 파일의 내용이 수정되었는지를 확인할 수 있다
+  - 아무런 옵션이 없으면 워킹 디렉토리에 있는 것만 비교를 해준다
+
+```bash
+
+$ echo hello world > c.txt
+$ echo styling > style.css
+
+$ git add .
+
+# c.txt 파일에 add라는 문자열 추가
+$ echo add >> c.txt
+
+# git diff 명렁어 수행하면 아래와 같은 결과 나온다
+$ git diff
+
+---
+diff --git a/c.txt b/c.txt
+index a042389..f5be8ac 100644 # index는 git 내부적으로 파일을 참고할 때 쓰인다
+--- a/c.txt
++++ b/c.txt
+@@ -1 +1,2 @@
+hello world!
++add
+---
+
+
+# a는 이전 버전을 의미하는데 이전 버전이라는 것이 워킹디렉토리에 있는 파일이라면 이전에 커밋된 버전을 의미하고 staging area에 변경된 내용이 있다면 그것이 이전 버전
+
+# -1은 이전 파일을 의미한다
+# 이전 파일에는 hello world
+# +1, 2은 새로운 파일의 두번째 줄 까지 확인하라는 뜻
+# 기존의 hello word가 있던 상태에서 add가 추가되었다는 뜻이다
+
+# staging area있는 것을 확인하고 싶으면 아래 명령어를 실행하고 다음과 같은 결과 나온다
+$ git diff --staged
+
+---
+diff --git a/c.txt b/c.txt
+new file mode 100644
+index 0000000..a042389
+--- /dev/null # 이전에는 아무것도 없었는데
++++ b/c.txt # c라는 파일이 추가가 되었고
+@@ -0,0 +1 @@ # 이전에는 아무것도 없었지만 새로운 파일의 첫번'째 줄에
++hello world! # hello word가 추가됨
+diff --git a/style.css b/style.css
+new file mode 100644
+index 0000000..c8658a5
+--- /dev/null # 이전에는 아무것도 없었는데
++++ b/style.css # 이전에는 아무것도 없었지만 새로운 파일의 첫번'째 줄에
+@@ -0,0 +1 @@ # styling가 추가됨
++styling
+(base)
+--
+
+# git diff의 다양한 옵션을 확인할 수 있다
+$ git diff -h
+
+# 에디터 실행 후 아래와 같은 내용 추가한다
+$ git config --global -e
+
+---
+[diff]
+ tool = vscode
+
+[difftool "vscode"]
+ cmd = code --wait --diff $LOCAL $REMOTE
+
+---
+
+# 추가한 후 git difftool 실행하면 vscode 같은 에디터에서 변경된 사항을 확인할 수 있다
+$ git difftool
+
+# staging area의 변경사항을 확인할 수 있다
+$ git difftool --staged
+
+```
 
 ---
 
