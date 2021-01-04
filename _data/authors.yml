@@ -1,7 +1,7 @@
 # The primary author of this blog.
 # Must be the same as `author` in `_config.yml`.
 # Change `qwtel` to your shortname (used in the front matter to set a page's author, e.g. `author: qwtel`).
-zzsza:
+ibtg:
   name: dh kim
   email: ibtg@gmail.com
 
@@ -73,5 +73,5 @@ mdo:
   social:
     github: <username>
     twitter: <username>
-  image: "data:image/gif;base64,R0lGODlhAQABAPAAACAgIP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" # http://jsfiddle.net/LPxrT/
-  color: "#268bd2"
+  image: 'data:image/gif;base64,R0lGODlhAQABAPAAACAgIP///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==' # http://jsfiddle.net/LPxrT/
+  color: '#268bd2'

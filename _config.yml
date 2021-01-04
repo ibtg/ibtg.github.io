@@ -13,7 +13,7 @@ url: https://ibtg.github.io
 baseurl: ''
 
 # A very short description of your page
-tagline: 공부한 것을 기록하는 블로그입니다.
+tagline: Frontend Developer
 
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
