@@ -13,6 +13,8 @@ comments: true
 
 - Javascript의 this의 개념을 처음 배울 때 이해가 잘 가지 않는 경우가 있습니다. 그 이유는 this가 자기 자신을 가르키는 Java와 달리 Javascript에서 this는 함수의 호출 방식에 따라서 결정되기 때문입니다.
 
+- 즉 this는 자신이 속한 객체를 가르키는 키워드로 상황에 따라 각각 다른 값을 가지게 됩니다.
+
 - 아래 예시를 보면 문맥에 따라서, '나' 가 가르키는 것이 각각 다른 것을 알 수 있습니다. 이처럼 Javascirpt의 this도 아래 문장의 '나'처럼 어떤 문맥이냐에 따라서 그 의미가 다릅니다.
 
 1. 할머니: 나는 허리가 아프다 (나 === 할머니)
@@ -84,7 +86,7 @@ var obj = {
 obj.foo();
 ```
 
-- 이를 방지하기 위해, that 변수, 또는 apply, call, bind 함수를 사용하는 방법이 있습니다.
+- 이를 방지하기 위해 다음과 같은 방법을 사용할 수 있습니다.
 
   ### 1. that 변수를 사용하는 방법
 
@@ -129,6 +131,28 @@ var obj = {
     bar.apply(obj, [1, 2]); //100
     bar.call(obj, 1, 2); //100
     bar.bind(obj)(1, 2); //100
+  },
+};
+
+obj.foo();
+```
+
+### 3. 화살표 함수를 사용하는 방법
+
+- 화살표 함수는 자신의 this를 가지지 않고 화살표 함수를 둘러싸는 lexical scope의 this를 사용합니다
+- 즉 현재 범위에 존재하지 않는 this를 찾을 때 화살표 함수는 바로 바깥 범위에서 this를 찾는 것으로 검색을 끝내게 됩니다.
+
+```javascript
+var obj = {
+  value: 1000,
+  foo: function () {
+    console.log('foo this: ', this.value); // 1000
+
+    const bar = () => {
+      console.log('arrow func bar this: ', this.value); //1000
+    };
+
+    bar();
   },
 };
 
