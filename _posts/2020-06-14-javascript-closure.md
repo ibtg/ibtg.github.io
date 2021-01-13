@@ -13,8 +13,8 @@ comments: true
 
 - 자바스크립트를 공부할 때 헷갈리는 개념 중 하나가 바로 클로저 입니다.
 - 우선, 클로저에 대해서 이해하기 위해서는 실행 컨텍스트(Execution Context)에 대한 개념을 갖추고 있어야 합니다.
-- 실행 컨텍스트에 대한 개념은 다음 사이트 ([실행 컨텍스트와 자바스크립트의 동작원리](<[https://poiemaweb.com/js-execution-context](https://poiemaweb.com/js-execution-context)>))를 참조하면 이해하는데 도움이 될 것입니다.
-- [MDN web docs](<[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)>)에 따르면 클로저는 다음과 같이 정의되어 있습니다.
+- 실행 컨텍스트에 대한 개념은 다음 사이트 [실행 컨텍스트와 자바스크립트의 동작원리](https://ibtg.github.io/frontend/2021/01/13/ec/)를 참조하면 이해하는데 도움이 될 것입니다.
+- [MDN web docs](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)에 따르면 클로저는 다음과 같이 정의되어 있습니다.
 - "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)"
 - 간단히 말하면, 클로저는 함수와 함수를 둘러싼 상태(렉시컬 환경)의 조합이라고 이라고 말할 수 있습니다
 - 렉시컬 환경은 아래의 예제를 통해서 이해할 수 있습니다
