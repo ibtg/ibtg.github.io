@@ -47,11 +47,21 @@ comments: true
 
 - 해당 함수를 실행하고 콘솔창에서 확인하게 되면 프로미스의 `state`가 `pending`인 것을 확인할 수 있습니다.
 
-- 만약 아래 코드처럼 프로미스를 만들고 `resolve`나 `reject` 호출하지 않으면 프로미스가 `pending` 상태가 되기 때문에 `resolve`나 `reject`를 통해서 작업을 완료해주어야 합니다
-
 ```javascript
 function User() {
   return new Promise((resolve, reject) => {});
+}
+const user = User();
+console.log(user);
+```
+
+- 프로미스를 만들고 `resolve`나 `reject` 호출하지 않으면 프로미스가 `pending` 상태가 되기 때문에 `resolve`나 `reject`를 통해서 작업을 완료해주어야 합니다
+
+```javascript
+function User() {
+  return new Promise((resolve, reject) => {
+    resolve(); // fulfilled
+  });
 }
 const user = User();
 console.log(user);
@@ -81,19 +91,90 @@ const promise = new Promise((resolve, reject) => {
 
 - 프로미스 작업을 수행한 다음, 프로미스 상태의 결과값을 `then, catch, finally`을 통해 받을 수 있습니다
 
-- `then`은 프로미스가 성공적으로 수행한 다음 `resolve`의 함수를 인자로 전달받습니다
+- `then`은 프로미스가 성공적으로 수행한 다음 `resolve`의 함수에 인자로 전달된 값을 인자로 전달받습니다
 
-- 따라서 아래 코드의 `value`로 `'success !'`가 전달됩니다
+- 따라서 아래 코드의 `value`로 `'success !'`가 전달되고 `doing somthing`이 출력되고 2초후 `success !`가 출력됩니다
 
-- 위 코드에서 에러가 발생한 경우 `Uncaught (in promise) Error: error !`가 콘솔 창에 출력됩니다.
+```javascript
+// Producer
+const promise = new Promise((resolve, reject) => {
+  console.log('doing someting');
+
+  setTimeout(() => {
+    resolve('success !');
+    // 성공적으로 받아온 데이터를 resolve라는 콜백함수에 전달한다
+
+    reject(new Error('error !'));
+    // 에러 발생 오브젝트 생성
+  }, 2000);
+});
+
+// Consumer
+promise
+  .then((value) => {
+    console.log(value);
+    // Producer 코드에서 resolve의 인자로 전달된 값이 value가 된다
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+- 하지만 아래 코드처럼 에러가 발생한 경우, reject 함수에 전달된 에러 오브젝트가 catch의 인자로 전달되기 때문에 `Uncaught (in promise) Error: error !`가 콘솔 창에 출력됩니다.
+
+```javascript
+// Producer
+const promise = new Promise((resolve, reject) => {
+  console.log('doing someting');
+
+  setTimeout(() => {
+    // 에러 발생 오브젝트 생성, 에러 발생한 경우
+    reject(new Error('error !'));
+  }, 2000);
+});
+
+// Consumer
+promise.then((value) => {
+  console.log(value);
+});
+```
 
 - `catch` 부분을 작성하게 되면 해당 에러가 발생하지 않게 되고, 아래 코드 처럼 `'error !'` 값이 전달되어 콘솔창에 출력됩니다
 
+```javascript
+// Producer
+const promise = new Promise((resolve, reject) => {
+  console.log('doing someting');
+
+  setTimeout(() => {
+    // 에러 발생 오브젝트 생성, 에러 발생한 경우
+    reject(new Error('error !'));
+  }, 2000);
+});
+
+// Consumer
+promise
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
 - 마지막 `finally`는 프로미스의 성공, 실패 여부에 상관 없이 실행됩니다
 
-- 이 때, `then`, 프로미스를 리턴할 수도 있는데 만약 `then`에서 리턴환 프로미스가 에러가 발생하게 되면 `catch` 를 써서 에러를 잡을 수 있다
-
 ```javascript
+// Producer
+const promise = new Promise((resolve, reject) => {
+  console.log('doing someting');
+
+  setTimeout(() => {
+    reject(new Error('error !'));
+    // 에러 발생 오브젝트 생성
+  }, 2000);
+});
+
 // Consumer
 promise
   .then((value) => {
@@ -106,6 +187,33 @@ promise
   .finally(() => {
     // 성공 실패 상관없이 호출된다
     console.log('finally');
+  });
+```
+
+- 이 때, `then`이 실행되는 부분에서 프로미스를 리턴할 수도 있는데 만약 `then`에서 리턴환 프로미스가 에러가 발생하게 되면 `catch` 를 써서 에러를 잡을 수 있습니다
+
+```javascript
+// Producer
+const promise = new Promise((resolve, reject) => {
+  console.log('doing someting');
+
+  setTimeout(() => {
+    resolve('success!');
+    // reject(new Error('error !'));
+    // 에러 발생 오브젝트 생성
+  }, 2000);
+});
+
+// Consumer
+promise
+  .then((value) => {
+    console.log(value); // success ! 출력
+    return new Promise((resolve, reject) => {
+      reject(new Error('new error !'));
+    });
+  })
+  .catch((error) => {
+    console.log(error); // new error! 출력
   });
 ```
 
@@ -199,7 +307,7 @@ First()
   .catch(console.log);
 ```
 
-- 이전 [콜백 함수를 정리한 글](https://ibtg.github.io/development/2020/06/15/javascript-callback/)의 콜백 지옥 예제를 프로미스를 사용하면 훨씬 더 간단하게 구현할 수 있습니다
+- 이전 [콜백 함수를 정리한 글](https://ibtg.github.io/frontend/2020/06/15/javascript-callback/)의 콜백 지옥 예제를 프로미스를 사용하면 훨씬 더 간단하게 구현할 수 있습니다
 
 ```javascript
 class UserStorage {
