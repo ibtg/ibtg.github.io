@@ -257,7 +257,7 @@ userStorage.loginUser(
 
 - 두번째는 에러가 발생했을 때 알아차리기가 힘들다는 것입니다. 어디서 체인이 길어질수록 어디서 에러가 발생했는지 찾아 문제를 해결하는 것이 힘들고 이러한 코드는 유지보수를 하기도 힘듭니다
 
-- 이러한 콜백 지옥의 해결할 수 있는 방법으로는 [프로미스(Promise)](https://ibtg.github.io/frontend/2020/06/27/javascript-asyncawait/)와 [async & await](https://ibtg.github.io/frontend/2020/06/27/javascript-promise/)가 있습니다.
+- 이러한 콜백 지옥의 해결할 수 있는 방법으로는 [프로미스(Promise)](https://ibtg.github.io/frontend/2020/06/27/javascript-promise/)와 [async & await](https://ibtg.github.io/frontend/2020/06/27/javascript-asyncawait/)가 있습니다.
 
 ---
 
