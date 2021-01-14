@@ -207,7 +207,7 @@ $ echo *.log > .gitignore
 # 또한 아래처럼 파일을 열어서 아래와 같이 추가하고 싶지 않은 파일을 타이핑 할 수도 있다
 # *.log
 # build/
-# build/.log
+# build/*.log
 
 # mac
 open .gitignore
@@ -220,7 +220,9 @@ stat .gitignore
 - git diff
 
   - git status를 통해서 파일의 상태를 확인할 수 있지만 어떠한 내용이 변경되었는지 알 수 없다
+
   - 하지만 git diff를 통해서 어떤 파일의 내용이 수정되었는지를 확인할 수 있다
+
   - 아무런 옵션이 없으면 워킹 디렉토리에 있는 것만 비교를 해준다
 
 ```bash
@@ -260,20 +262,25 @@ $ git diff --staged
 ---
 diff --git a/c.txt b/c.txt
 new file mode 100644
-index 0000000..a042389
+index 0000000..a042389 # index는 git 내부적으로 파일들을 참고할 때 쓰는 것
 --- /dev/null # 이전에는 아무것도 없었는데
 +++ b/c.txt # c라는 파일이 추가가 되었고
-@@ -0,0 +1 @@ # 이전에는 아무것도 없었지만 새로운 파일의 첫번'째 줄에
+@@ -0,0 +1 @@ # 이전에는 아무것도 없었지만 새로운 파일의 첫번째 줄에
 +hello world! # hello word가 추가됨
 diff --git a/style.css b/style.css
 new file mode 100644
 index 0000000..c8658a5
 --- /dev/null # 이전에는 아무것도 없었는데
-+++ b/style.css # 이전에는 아무것도 없었지만 새로운 파일의 첫번'째 줄에
++++ b/style.css # 이전에는 아무것도 없었지만 새로운 파일의 첫번째 줄에
 @@ -0,0 +1 @@ # styling가 추가됨
 +styling
 (base)
 --
+
+# 스테이지란 말은 보통 캐시라는 말과 동의어로 사용하는데 아래처럼 --cached 옵션을 주게되면
+# 동일 하게 git diff --staged 옵션을 사용했을 때와 동일한 결과가 나온다
+$ git diff --cached
+
 
 # git diff의 다양한 옵션을 확인할 수 있다
 $ git diff -h
