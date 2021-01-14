@@ -30,6 +30,10 @@ comments: true
 
 - 아래 코드를 실행하고 콘솔 창을 확인해 보면 프로미스가 리턴 된 것을 확인할 수 있습니다
 
+- 그리고 아래 코드에서 `user!`를 리턴하는 부분은 프로미스에서 `resolve` 함수에 `user!` 전달해서 실행하는 것과 같습니다.
+
+- 따라서 `then`을 사용해서 값을 전달 받을 수 있습니다.
+
 ```javascript
 async function fetchUser() {
   return 'user!';
@@ -40,16 +44,64 @@ user.then(console.log);
 console.log(user);
 ```
 
+- 즉, 위 코드는 아래처럼 Promise를 사용한 것과 같습니다
+
+```javascript
+function fetchUser() {
+  return new Promise((resolve, reject) => {
+    resolve('user');
+  });
+}
+```
+
 ---
 
 ### await
 
-- `await` 키워드는 프로미스를 기다리기 위해서 사용됩니다.
-- 아래 코드처럼 `await`를 사용해서 firstFunc 함수가 1초 후, SecondFunc 함수를 2초후에 호출할 수 있습니다
+- `await` 키워드는 `async` 함수 안에서만 동작하는데 프로미스를 기다리기 위해서 사용됩니다.
+
+- 다음과 같은 코드를 실행하면, `await`가 있는 부분에서 실행이 잠시 중단되었다가, 프로미스가 처리되면 실행이 재개됩니다
+
+- 그리고 프로미스에서 `resolve` 함수에 전달된 값을 `then`에서 받을 수 있는 것 처럼, 프로미스 객체의 결과 값이 `result`변수에 할당됩니다.
+
+- 아래처럼 `resolve` 함수에 `success!`가 전달되는 경우에는 전달된 `success!`값이 `result`에 할당됩니다
+
+```javascript
+async function foo() {
+  // 프로미스는 만들어지자 마자 실행된다
+  const result = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('success');
+    }, 1000);
+  });
+
+  console.log(result);
+}
+
+foo();
+```
+
+- 에러가 발생하는 경우에는 에러 값이 `result`에 할당됩니다.
+
+```javascript
+async function foo() {
+  const result = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'));
+    }, 1000);
+  });
+
+  console.log(result);
+}
+
+foo();
+```
+
+- 아래 코드처럼 `await`를 사용해서 firstFunc 함수가 1초 후 `first`를 반환하도록, SecondFunc 함수를 2초후에 `second`'를 반환하도록 할 수 있습니다
 
 ```javascript
 function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve(), ms));
 }
 
 async function firstFunc() {
@@ -57,7 +109,8 @@ async function firstFunc() {
   // 1초가 지나면 resolve 호출하는 함수
   // await 키워드 때문에 1초가 끝날 때 까지 기다려야 한다
   return 'first';
-  // delay 함수가 성공적으로 수행되고 resolve를 실행하게 되면, firstFunc 함수에서도 first를 인자로 하는 resolve를 실행한다
+  // delay 함수가 성공적으로 수행되고 resolve를 실행하게 되면,
+  // firstFunc 함수에서도 first를 인자로 하는 resolve를 실행한다
 }
 
 async function secondFunc() {
@@ -94,10 +147,12 @@ print().then(console.log);
 
 - 하지만 `async & await`를 사용하면 다음과 같이 `first to second` 이상의 숫더 간결하게 코드를 작성할 수 있습니다.
 
+- 아래 코드는 `first`, `second` 이외에도 `third`, `fourth`를 반환하는 함수가 있는 경우입니다.
+
 ```javascript
 async function print() {
-  const first = await firstFunc();
-  const second = await secondFunc();
+  const first = await firstFunc(); // first를 리턴 받는다
+  const second = await secondFunc(); // second를 리턴 받는다
   const third = await thirdFunc(); // third 리턴하는 함수
   const fourth = await fourthFunc(); // fourth 리턴하는 함수
   return `${first} + ${second} + ${third} + ${fourth}`;
@@ -107,8 +162,12 @@ print().then(console.log);
 
 - 또한 error가 발생하는 경우에도 `try, catch`를 사용해서 해결할 수 있습니다
 
+- 아래 코드는 `firstFunc` 함수에서 `error`가 발생하는 경우입니다.
+
+- `firstFunc`에서 `error`가 발생하게 되고, 이를 `catch`문에서 처리해주게 됩니다
+
 ```javascript
-async function secondFunc() {
+async function firstFunc() {
   await delay(2000);
   throw 'error';
   return 'second';
@@ -128,18 +187,32 @@ async function print() {
   }
 }
 
-print().then(console.log);
+print().then(console.log); // error 출력
 ```
 
 ---
 
 - 아래 코드는 위에서 작성한 first + second를 출력하는 코드입니다.
 
-- 이 코드에서는 firstFunc 함수 1초, secondFunc를 2초를 각각 기다려야 합니다
+- 이 코드에서는 `await`을 만나는 순간 각 프로미스가 처리되어야 하므로 firstFunc 함수가 실행되고 1초 뒤에 `first`를 반환 받은 다음, secondFunc를 실행해서 2초 기다려서 `second`를 반환 받습니다
 
 - 하지만 두 함수는 서로 연관되어 있지 않기 때문에 서로 기다릴 필요가 없습니다
 
 ```javascript
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve(), ms));
+}
+
+async function firstFunc() {
+  await delay(1000);
+  return 'first';
+}
+
+async function secondFunc() {
+  await delay(2000);
+  return 'second';
+}
+
 async function print() {
   const first = await firstFunc();
   const second = await secondFunc();
@@ -169,7 +242,8 @@ async function print() {
 
 - 이렇게 병렬적으로 프로미스를 실행하는 경우 프로미스에서 제공하는 api를 사용해서 더 간결한 코드로 나타낼 수 있습니다.
 
-- `Promise.all`메서드에 프로미스를 담은 배열을 전달하게 되면, 배열에 있는 모든 프로미스들이 완료된 후 새로운 프로미스가 실행되는데, 배열에 있는 각각의 프로미스의 결과값들이 새로운 프로미스의 결과값이 됩니다.
+- `Promise.all`메서드에 프로미스를 담은 배열을 전달하게 되면, 배열에 있는 모든 프로미스들이 완료된 후 새로운 프로미스가 fulfilled 됩니다.
+- 이 때 배열에 있는 각각의 프로미스의 결과값을 담은 배열이 새로운 새로운 프로미스의 결과값이 됩니다.
 
 ```javascript
 function print() {
