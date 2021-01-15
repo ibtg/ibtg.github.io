@@ -19,7 +19,7 @@ comments: true
 
 ---
 
-<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-09-05-jsruntime-microq.jpg?raw=true" width="600">
+<img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-09-05-jsruntime-microq.png?raw=true" width="600">
 
 ### Render
 
@@ -29,7 +29,7 @@ comments: true
 
 - 그 전에 Request Animation Frame 이라는 API가 있는데 이 API를 통해서 콜백을 등록해 놓으면, Request Animation Frame 의 큐에 차곡차곡 쌓이게 되고 다음에 브라우저가 업데이트가 되기 전에 등록된 콜백 함수들을 실행하게 된다
 
-- 즉, Request Animation Frame 큐에 있는 콜백들을 처리할때 해당 콜백들도 event loop가 Microtask Queue에서 콜백들을 처리하는 것처럼 해당 큐가 텅텅 빌떄까지 순회를 멈추게 되고 Request Animation Frame의 콜백들도 콜 스택(Call Stack)으로 전달되어 함수가 실행된다
+- 즉, Request Animation Frame 큐에 있는 콜백들을 처리하는 경우, event loop는 Microtask Queue에서 콜백들을 처리하는 것처럼 해당 큐가 텅텅 빌떄까지 순회를 멈추게 되고 Request Animation Frame의 콜백들도 콜 스택(Call Stack)으로 전달되어 함수가 실행된다
 
 - Even Loop는 위 그림과 같이 Call Stack과 Render, Microtask Queue, Task Queue 사이를 계속해서 돌고 있다.
 
@@ -37,7 +37,7 @@ comments: true
 
 - 콜 스택에 등록된 함수의 작업이 다 끝나고 나서 이벤트 루프는 다시 움직이게 되는데 이 때, Render 쪽으로는 갈 수도 있고 가지 않을 수도 있다
 
-- 브라우저에서는 우리가 업데이트하는 내용을 사용자에게 60 fps (frame per seconds), 1초 동안 60개의 프레임을 보여주기 위해서 노력하는데,
+- 브라우저에서는 우리가 업데이트하는 내용을 사용자에게 60 fps (frame per seconds), 1초 동안 60개의 프레임을 보여주기 위해서 노력한다.
 
 - 사람 눈에 애니메이션이 자연스러워 보이기 위해서는 1초당 60개의 그림이 필요한데 브라우저 위에서도 사용자 눈에 부드럽게 애니메이션이 된다는 느낌을 받게 하기 위해서는 1초당 60개의 프레임을 보여줘야 하며 그렇게 하기 위해서는 16.7ms 동안 업데이트가 일어나야 한다.
 
