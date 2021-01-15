@@ -73,4 +73,4 @@ comments: true
 
 - [이벤트 루프와 매크로·마이크로태스크](https://ko.javascript.info/event-loop)
 
-- [JS] 태스크 큐와 이벤트 루프](https://kjwsx23.tistory.com/311)
+- [JS 태스크 큐와 이벤트 루프](https://kjwsx23.tistory.com/311)
