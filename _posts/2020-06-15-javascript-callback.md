@@ -38,7 +38,7 @@ console.log(user);
 
 - 이러한 단점을 극복하기 위한 방법이 비동기적(Asynchronous) 방법입니다.
 
-- 요약하자면 자바스크립트의 코드는 기본적으로 동기적(Synchronous)으로 실행되지만 비동기적(Asynchronous)으로 실행하는 방법이 있습니다.
+- 요약하자면 자바스크립트의 코드는 기본적으로 동기적(Synchronous)으로 실행되지만 Web API에서 제공하는 여러 함수들을 사용해서 비동기적(Asynchronous)으로 실행 할 수 있습니다.
 
 - 우선 아래의 코드는 한줄씩 동기적으로 실행되는 코드 입니다
 
@@ -51,6 +51,16 @@ console.log('3');
 
 - 하지만 `setTimeout()`함수를 쓰면 비 동기적으로 코드를 실행할 수 있습니다.
 
+- 아래 코드를 보면 `setTimeOut()` 함수의 첫번째 인자로 전달되는 함수가 있는데 이 함수가 바로 콜백 함수 입니다.
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)는 콜백 함수를 다음과 같이 정의하고 있습니다.
+
+- A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+- 즉, 콜백 함수는 다른 함수의 인자로 전달되어 특정한 시점에 실행되는 함수라고 할 수 있습니다.
+
+- 아래 코드에서의 화살표 함수는 2초 이후에 Web API에 의해 태스크 큐로 이동하게 된 다음 실행되는 콜백함수 입니다.
+
 ```javascript
 console.log('1');
 setTimeout(() => {
@@ -62,8 +72,11 @@ console.log('3');
 ```
 
 - 위 코드에서 `setTimeout()` 함수의 두번째 인자로는 timeout 값인 2초를 전달해주었고 2초후에 첫번째 인자로 전달된 함수가 실행되면서 `2`가 출력됩니다.
+
 - 따라서 코드를 실행시키면 `1, 3, 2`가 순서대로 출력됩니다
+
 - 하지만 `setTimeout()` 함수의 timeout 인자를 0으로 설정해도 결과값은 `1, 2, 3`이 아닌 `1, 3, 2`가 출력됩니다
+
 - 그 이유를 알기 위해서는 `setTimeout()` 함수가 콜 스택(Call Stack)에서 어떻게 작동하는지 알아야 합니다
 
 ---
@@ -82,15 +95,7 @@ console.log('3');
 
 - 이렇게 비동기 처리 방식에서 발생할 수 있는 문제를 콜백 함수(Callback Function)를 통해서 해결할 수 있습니다.
 
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)는 콜백 함수를 다음과 같이 정의하고 있습니다.
-
-- A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
-
-- 즉, 콜백 함수는 다른 함수의 인자로 전달되어 특정한 시점에 실행되는 함수라고 할 수 있습니다.
-
 - 아래 코드는 `1, 2, 3` 을 순서대로 출력하기 위해 콜백 함수를 사용하고 있습니다.
-
-- 사실 위 코드의 `setTimeout` 의 첫번째 인자로 전달되고 2초 후에 `2`를 출력하는 함수도 콜백 함수 입니다.
 
 - 아래 예제에서는 첫번째 예제의 비동기 처리 방식에서 발생한 문제를 또 다른 콜백 함수로 해결하고 있습니다
 
