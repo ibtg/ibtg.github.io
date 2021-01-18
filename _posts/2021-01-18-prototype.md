@@ -7,6 +7,10 @@ tags: javascript
 comments: true
 ---
 
+- 자바스크립트의 프로토타입(Prototype)에 대해서 정리한 글입니다
+
+---
+
 ### 객체(Object)
 
 - 자바스크립트에서 객체란 키(Key)와 값(Value)로 구성된 프로퍼티(Property)들의 집합으로, 원시 타입(Primitive Type)을 제외한 나머지(함수, 배열등)이 객체가 된다
