@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'git branch와 merge '
+title: 'git branch, merge 명령어 정리'
 subtitle: 'git branch merge'
 categories: development
 tags: git
@@ -130,43 +130,73 @@ comments: true
 ### CLI 명령어
 
 ```bash
-git branch [-v]
+$ git branch [-v]
 # 로컬 저장소의 브랜치 목록을 보는 명령어
-# -v 옵션을 사용하면 마지막 커밋도 함께 표현된다
-# 표시된 브랜치 중에서 일므 왼쪽에 *가 붙어 있으면 HEAD 브랜치이다
+# -v 옵션을 사용하면 최신 커밋들도 함께 확인할 수 있다
+# 표시된 브랜치 중에서 이름 왼쪽에 * 가 붙어 있으면 HEAD 브랜치이다
 
-git branch [-f] <브랜치이름> [커밋체크섬]
+$ git branch --all
+# github와 같은 서버에 연결된 repository 라면 서버에 있는 모든 branch 정보를 보여준다
+
+$ git branch [-f] <브랜치이름> [커밋체크섬]
 # 새로운 브랜치를 생성한다
 # 커밋체크섬 값을 주지 않으면 HEAD로 부터 브랜치를 생성한다
 # 이미 있는 브랜치를 옮기고 싶을 때는 -f 옵션을 사용한다
 
-git branh -r[v]
+$ git branch -r[v]
 # 원격 저장소에 있는 브랜치를 보고 싶을 때
 # -v 옵션을 추가하면 커밋 요약을 볼 수 있다
 
-git checkout <브랜치이름>
+$ git checkout <브랜치이름>
+$ git switch <브랜치이름>
 # 특정 브랜치로 체크아웃 할 때
+# git checkout 은 뒤에 커밋 해쉬코드를 쓰면 특정 커밋으로 이동할 수 도있다
 
-git checkout -b <브랜치이름> <커밋 체크섬>
+$ ls
+# 특정 커밋으로 이동한 후 ls 명령어 통해 해당 브랜치 상태에 있는 파일들만 표기되는 것을 볼 수 있다
+
+$ git checkout -b <브랜치이름> <커밋 체크섬>
+$ git switch -C <브랜치이름>
 # 특정 커밋에서 브랜치를 새로 생성하고 동시에 체크아웃 까지 한다
 
-git merge <대상 브랜치>
+$ git merge <대상 브랜치>
 # 현재 브랜치와 대상 브랜치를 병합할 때 사용
 # 병합 커밋이 새로 생기는 경우가 많다
 
-git rebase <대상 브랜치>
+$ git branch --merged
+# 현재 브랜치에 merge가 된 브랜치를 볼 수 있다
+# 만약 현재 브랜치에서 새로운 브랜치를 만들기만 하고 다른 커밋을 추가하지 않은 경우 함께 표시된다.
+
+$ git branch --no-merged
+# 현재 브랜치에 merge가 되지 않은 브랜치를 볼 수 있다
+
+$ git rebase <대상 브랜치>
 # 내 브랜치의 커밋을 대상브랜치에 재배치 시킨다
 # 히스토리가 깔끔해져서 자수 사용하지만 조심해서 사용해야 한다
 
-git branch -d <브랜치이름>
+$ git branch -d <브랜치이름>
 # 특정 브랜치를 삭제한다
 # HEAD 브랜치나 병합이 되지 않은 브랜치는 삭제할 수 없다
 
-git branch -D <브랜치이름>
+$ git push origin --delete <브랜치이름>
+# 내 repository가 서버에도 있어서 branch를 삭제한 것을 원격에도 업데이트 하고 싶은 경우
+
+$ git branch -D <브랜치이름>
 # 브랜치를 강제로 삭제
 # -d로 삭제할 수 없는 브랜치를 지우고 싶을 때 사용한다
 # 조심해서 사용해야 한다
 
+$ git branch --move <변경 전 브랜치이름> <새로운 브랜치이름>
+# 브랜치의 이름을 변경하고 싶은 경우
+
+$ git push --set-upstream origin <변경된 브랜치이름>
+# 변경사항을 원격에 업데이트 하고 싶은 경우
+
+$ git log master..<브랜치 이름>
+# 브랜치가 너무 많은 경우에 master 브랜치와 특정 브랜치 사이의 커밋들만 확인하고 싶을 때 사용
+
+$ git diff master..<브랜치 이름>
+# 브랜치가 너무 많은 경우에 master 브랜치와 특정 브랜치 사이의 코드들을 보고 싶을 때 사용
 ```
 
 ---
@@ -208,7 +238,7 @@ git branch -D <브랜치이름>
   - 병합 커밋처럼 부모가 둘 이상인 커밋에서만 의미 있다
 
 ```bash
-git reset --hard <이동할 커밋 체크섬>
+$ git reset --hard <이동할 커밋 체크섬>
 
 $ git reset hard HEAD~2
 # HEAD를 2단계 이전으로 되돌리기
@@ -324,6 +354,38 @@ git merge 브랜치이름
 
 ---
 
+- Fast-forward 는 히스토리에 merge 되었다는 사실이 남지 않지 않는다
+  하지만 히스토리에 남기고 싶은 경우라면 Fast-foward가 가능해도 새로운 commit을 만들어서 master branch에 commit할 수 있다
+
+- 아래처럼 master 브랜치에서 새로운 브랜치를 만들고 새로운 커밋을 만든 후에 master 브랜치를 `feature/c`브랱치와 merge 하면 Fast-forward가 된다
+
+```bash
+$ git checkout -b feature/c
+
+$ echo c > c.txt
+
+$ git commit -m "Add c branch"
+
+```
+
+- 하지만 merge 흔적을 히스토리에 남기고 싶은 경우에는 다음처럼 `--no-ff`라는 옵션을 사용한다
+
+- 아래처럼 `--no-ff`을 사용하면 새로운 커밋을 입력받기 위해 텍스트 에디터가 실행되고, 커밋 메시지를 작성한 후에 `git log`로 확인해 보면 merge 커밋이 생성되어있고 master 브랜치는 생성된 merge 커밋을 가리키고 있는 것을 확인할 수 있다
+
+```bash
+$ git merge --no-ff
+
+$ git branch -d feature/c
+
+$ git log
+# 새로운 커밋 생성되어 있고 master 브랜치는 새로운 커밋 가리킨다
+# feauture/c 브랜치는 삭제되었지만 feature/c와 합쳐졌다는 것을 알 수 있따
+
+
+```
+
+---
+
 ### fetch
 
 - 원격 저장소로부터 코드를 받아 병합하는 git pull 명령어와 달리, 그래프만 업데이트를 한다
@@ -344,6 +406,39 @@ git fetch [원격저장소별명] [브랜치이름]
 ---
 
 ### 3-way 병합하기
+
+- 3-way merge는 fast-forward merge에서 히스토리에 남는 것을 선호해서 새로운 커밋을 만들고 싶거나 또는 fast-forward가 불가능한 경우에 사용한다
+
+- master 브랜치에서 새로운 feature/a 라는 브랜치를 만든 다음 여러개의 커밋을 추가하였고 master 브랜치에도 커밋이 추가되어 있는 경우엔은 fast-forward를 사용할 수 없다
+
+- 그 이유는 master 브랜치에서 feature/a 브랜치를 만든 다음 추가한 커밋에 대한 정보를 잃어버리게 되기 때문이다
+
+- 따라서 아래 처럼 원래의 브랜치에서 새로운 커밋이 추가된 경우 3-way merge를 이용해야 한다
+
+```bash
+        ----- C3 <-- C4(feature/a)
+        ↑
+C1 <-- C2 <-- C5 <-- C6 <-- C7 (master)
+```
+
+- 즉, 베이스 branch인 master 브랜치와 파생된 feature/a 브랜치의 변동사항을 모두 합해서 merge 커밋을 만든 다음에 master 브랜치에 커밋해야 한다
+
+- git merge를 사용할 때 아무런 옵션 없이 사용하는 경우에 fast-forward가 가능한다면 merge commit을 만들지 않고 fast-forward merge를 진행하지만 fast-forward가 불가능한 상황이라면 커밋 메시지를 입력하도록 진행된다
+
+```bash
+$ git merge feature/a
+# 새로운 커밋 메시지 입력 받는다
+```
+
+- 3-way merge 후 다음과 같은 상태가 된다
+
+```bash
+        ----- C3 <-- C4(feature/a)
+        ↑
+C1 <-- C2 <-- C5 <-- C6 <-- C7 <-- C8 (master)
+```
+
+- 3-way merge를 실무에서는 다음과 같은 상황에서 사용할 수 있다
 
 - 버그를 발견한 상황에서 버그 수정은 다음과 같은 단계로 이루어 진다
 
@@ -447,6 +542,103 @@ $ git log --oneline --all --graph -n4
 
 ---
 
+### Conflict 해결 방법
+
+- 다음은 C2에서 새로운 feature/a 라는 브랜치를 생성하고 난 이후 feature/a라는 브랜치와 master 브랜치 모두 동일한 파일을 수정한 경우이다
+
+```bash
+        ----- C3 (feature)
+        ↑
+C1 <-- C2 <-- C4  (master)
+```
+
+- 이러한 경우 merge를 하면 에러가 발생한다
+
+```bash
+$ git merge feature
+# 에러 발생
+
+$ git status
+# 내용 확인
+```
+
+- 이러한 에러가 발생했을 때 수동으로 해결할 수 있는 방법은 다음과 같다
+
+```bash
+$ open main.txt
+# 에러 발생한 파일 열어준다
+
+# 파일 열면 아래처럼 파일이 충돌한 부분 확인할 수 있다
+<<<<<<< HEAD
+Oh.. Here!! From master branch!
+=======
+Oh.. Here!! From feature branch!
+>>>>>>> feature
+
+
+# master 브랜치에 있는 내용 쓰고 싶으면 feature 브랜치 내용 삭제해주고
+# feature 브랜치에 있는 내용 쓰고 싶으면 master 브랜치 내용 삭제해준다
+# 혹은 둘다 넣고 싶은 경우 confict와 관련된 <<<HEAD, >>>feature 지워준다
+
+```
+
+- 다만 이처럼 confict 해결할 때 다른 작업은 하지 않고 충돌한 부분만 해결한다
+
+```bash
+$ git merge --abort
+# merge 취소하고 싶은 경우
+
+$ git status
+# both modified 확인할 수 있다
+# (use "git add <file>..." to mark resolution) 부분 통해 add 해야하는 것을 알 수 있다
+
+$ git add main.txt
+
+$ git merge --continue
+# fast forward가 아니기 때문에 merge commit 입력 받는다
+
+$ git log
+# 새로운 커밋 만들어진 것 확인할 수 있다
+```
+
+- vscode로 confict 해결하는 방법
+
+```bash
+$ git config --global -e
+
+# 아래 명령어를 추가해준다
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+
+# 충돌 발생하면 vscode가 열린다
+$ git mergtool
+
+$ git status
+# main.txt.orig 라는 이전에 merge confict가 발생했을 때의 내용을 포함한 파일도 함께 있다
+
+$ git config --global mergetool.keepBackup false
+# 해당 파일이 생기는 것을 막기 위한 옵션
+
+```
+
+- vscode 말고 또 다른 방법으로 merge를 할 수 있는 툴로는 [p4merge](https://www.perforce.com/ko/jepum/helix-core-apps/merge-diff-tool-p4merge) 가 있다
+
+```bash
+
+$ git config --global -e
+
+[mergetool "p4merge"]
+  path = "설치경로"
+
+$ git mergetool
+# p4merge가 실행된다
+```
+
+---
+
 - 풀 리퀘스트 (Pull request)
 
   - 협력자에게 브랜치 병합을 요청하는 메세지를 보내는 것
@@ -466,6 +658,7 @@ $ git log --oneline --all --graph -n4
 - base : 병합된 커밋이 들어갈 브랜치를 선택한다
 
 - compare : 내가 만들어서 base 브랜치에 반영시키고 싶은 브랜치
+
 - able to merge : 충돌없이 병합될 수 있다는 뜻
 
 - Pull은 실제 코드를 내려 받는데 비해 fetch (패치)는 그래프만 업데이트 한다.
@@ -483,54 +676,6 @@ $ git log --oneline --all --graph -n4
 - Pull은 실제 코드를 내려 받는데 비해 패치는 그래프만 업데이트 한다
 
 - [패치] 후 브랜치의 병합이 잘 된 것을 확인한 이후에 [master] 로 브랜치를 옮긴다음에 [pull]을 해서 로컬 저장소의 [master]와 원격 저장소의 [master]를 동일하게 만들어준다
-
----
-
-### Release, Tag
-
-- 버전을 올리는 것은 메이저 업그레이드와 마이너 업그레이드로 나뉜다
-
-  - 메이저 업그레이드 : 사람들이 크게 느낄 변화를 적용(v2.x → v3.x)
-  - 마이너 업그레이드 : 작은 변화 등이 있을 때 (v.2.3 → v.2.4)
-
-- 릴리즈(release)
-
-  - 프로그램을 출시하는 것
-
-- 태그(Tag)
-  - 새로운 프로그램을 출시하고 현재 코드 상태를 버전 v1.0.0이라고 기록할 때 이를 태그를 통해서 간단하게 표시할 수 있다
-  - 브랜치 처럼 커밋을 가리키는 가벼운 포인터이다
-  - 태그도 브랜치처럼 푸시를 해주어야 원격저장소에서도 볼 수 있다
-
----
-
-- 배포 버전에 태깅하기
-
-  - 태그에는 주석이 있는 태그와 간단한 태그 두 종류가 있다
-
-  - 태그는 차후에 커밋을 식별할 수 있는 유용한 정보
-
-  - 태그를 사용하면 GitHub의 [Tags] 탭에서 확인할 수 있고, [Release] 탭에서 다운 받을 수 있다
-
-```bash
-git tag -a -m <간단한 메시지> <태그 이름> [브랜치 또는 체크섬]
-# -a로 주석있는(annotated) 태그를 생성한다
-# 메시지와 태그 이름은 필수이며 브랜치 이름을 생략하면 HEAD에 태그를 생성한다
-
-git push <원격 저장소 별명> <태그 이름>
-# 원격 저장소에 태그르 업로드 한다
-
-```
-
-```bash
-$ git log --oneline # 로그 확인
-
-$ git log -a -m "첫 번째 태그 생성" v0.1
-
-$ git log --oneline # 태그  생성 확인
-
-$ git push origin v0.1 # 태그 푸시
-```
 
 ---
 
