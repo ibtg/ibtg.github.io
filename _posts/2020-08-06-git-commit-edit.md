@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'git amend, cherry-pick, reset, revert, stash'
+title: 'git amend, cherry-pick, reset, revert, stash 명령어 정리'
 subtitle: 'git edits'
 categories: development
 tags: git
@@ -48,6 +48,12 @@ comments: true
   - 이를 통해서 변경사항을 복사해 왔지만 서로 같은 커밋은 아니라는 것을 알 수 있다
 
     <img src="https://github.com/ibtg/ibtg.github.io/blob/master/assets/img/post_img/2020-08-06-git-commit-edit3.png?raw=true">
+
+  ```bash
+  $ git cherry-pick "커밋 해쉬코드"
+  #  커밋을 가져와서 추가할 브랜치인 feat/a 브랜치 위에서 실행
+
+  ```
 
 ---
 
