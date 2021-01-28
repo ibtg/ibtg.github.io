@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'git cherry-pick 명령어 정리'
-subtitle: 'git edits'
+subtitle: 'git cherrypick'
 categories: development
 tags: git
 comments: true
