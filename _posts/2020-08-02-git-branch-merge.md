@@ -639,6 +639,38 @@ $ git mergetool
 
 ---
 
+### 임시 브랜치 사용하기
+
+- 입문자들이 merge나 rebase할 때 소스가 깨지거나 작업의 내용이 사라지는 걱정이 있는데 이럴 때 임시브랜치를 활용한다
+
+- 원래 작업하려고 했던 브랜치의 커밋으로 임시 브랜치를 만들고 나면 해당 브랜치에서는 아무작업이나 해도 상관이 없다
+
+- 나중에 그 블내치를 삭제하기만 하면 모든 내용이 원상 복구 된다
+
+- 임시 브랜치가 필요 없어지는 git branch -D <브랜치 이름> 명령으로 삭제할 수 있다
+
+```bash
+$ git branch test feature1 # featue1 브랜치에서 임시 브랜치 생성
+
+$ git checkout test
+
+$ echo "abc" > test1.txt
+
+$ git add .
+
+$ git commit -m "임시 커밋"
+
+$ git log --oneline --graph --all -n4
+
+$ git checkout master
+
+$ git branch -D test
+
+$ git log --oneline --graph --all -n3
+```
+
+---
+
 - 풀 리퀘스트 (Pull request)
 
   - 협력자에게 브랜치 병합을 요청하는 메세지를 보내는 것

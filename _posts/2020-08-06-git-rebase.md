@@ -178,6 +178,63 @@ $ git merge UI
 
 ---
 
+### interactive rebasing
+
+- 기존에 존재하는 history를 간편하게 변경하는 방법
+
+- 기존의 history를 변경하는 것이기 때문에 서버에 업로드 된 경우 말고 혼자서 작업하는 경우에 유용하게 사용할 수 있는 방법이다
+
+- [`git ammend`](https://ibtg.github.io/development/2020/08/06/git-amend/) 명령어를 사용하면 최신 커밋의 타이틀이나 수정 사항을 업데이트 할 수 있었다
+
+- 이 때 최신 커밋이 아니라 예전 커밋을 업데이트 하고 싶은 경우 `interative rebasing`을 사용할 수 있다
+
+- 예를들어 아래와 같은 커밋에서 C3 에서 rebasing 한다면 rebasing 하는 순간 , C4부터 C3 하나만 수정하더라도 C3 이후의 모든 커밋들이 업데이트 되어야 하기 때문에 C3를 포함해서 C3 이후의 커밋들이 모든 새로운 커밋이 되면서 history가 업데이트 된다
+
+```bash
+
+# interative rebasing 전
+
+C1 <-- C2 <-- C3 <--C4 <-- C5 <-- C6 <-- C7
+
+# interative rebasing 후
+C1 <-- C2 <-- C3* <--C4* <-- C5* <-- C6* <-- C7*
+
+```
+
+- 그리고 C3 커밋의 커밋 메시지를 다른 커밋 메시지로 변경하고 싶은 경우 C3 커밋이 가리키는 C3 이전의 해쉬코드 부터 시작해야 한다
+
+- 즉 rebase를 할 때 C2 커밋의 해쉬코드를 사용한다
+
+```bash
+$ git rebase -i "C2 commit hashcode"
+# 텍스트 에디터에서 C2 이후 모든 커밋과 commands 확인할 수 있다
+
+# p, pick : 커밋을 사용하라는 것
+# r, reword : 커밋을 사용하지만 메시지는 변경한다
+# e, edit : 커밋을 사용하지만 안의 변경사항을 바꾸겠다
+# s, squash : merge 를 통해 커밋을 하나로 묶어주는 것처럼 여러 commit을 하나로 묶어준다
+# f, fixup : sqush와 비슷하지만 메시지를 남기지 않는 것
+# e, exec : 이 커밋부터 shell 명령어를 직접적으로 이용하고 싶을 때 사용한다
+# b, break: stop here, 여기서 멈춘다
+# d, drop: 해당하는 커밋을 history에 남기지 않고 제거하고 싶을 때
+
+
+# 위 명령어를 사용해서 C3의 커밋메시지를 변경할 수 있다
+pick "C3 commit hashcode" "커밋 메시지"
+
+# 이전의 pick 대신 사용한다 r(reword)를 사용한다
+r "C3 commit hashcode" "커밋 메시지"
+
+# 다시 커밋메시지를 수정할 수 있는 창이 생긴다.
+# 여기서 새로운 커밋메시지로 수정하고 저장하면 rebase가 끝나있다
+
+$ git log
+# 변경된 것 확인
+
+```
+
+---
+
 - 3-way병합은 기존 커밋의 변경 없이 새로운 병합 커밋을 하나 생성한다
 
 - 따라서 충돌도 한 번만 발생한다
@@ -220,7 +277,7 @@ $ git merge UI
 
 - 불필요하게 병합 커밋이 생긴 상황이므로, 이를 해결하는 방법으로는 reset —hard로 병합 커밋을 되돌리고 rebase를 사용하는 것이다
 
-- 우선 아래처럼ㄹ 상황을 만들어 준다
+- 우선 아래처럼 상황을 만들어 준다
 
 ```bash
 # 보통 커밋 만들기
@@ -235,7 +292,7 @@ $ git push origin master
 
 $ git log --oneline -n1
 
-$ ls # 작업 디렉토리 상태 확인인
+$ ls # 작업 디렉토리 상태 확인
 ```
 
 ```bash
@@ -253,7 +310,8 @@ $ git add .
 $ git commit -m "master 2 커밋"
 
 $ git log --oneline --graph --all -n3
-# 로그를 확인해보면 master1 커밋과 master2 커밋 모두 같은 커밋을 부모로하므로, 가지가 생긴 것을 확인할 수 있다
+# 로그를 확인해보면 master1 커밋과 master2 커밋 모두 같은 커밋을 부모로 가지기 때문에
+# 가지가 생긴 것을 확인할 수 있다
 
 $ git pull # 충돌 생긴다
 # pull은 fetch + merge이므로 가지를 병합하기 위해 병합커밋이 생기고 히스토리가 지저분해진다
@@ -294,38 +352,6 @@ $ git push
 - 이 상황에서 또 누군가는 충돌을 해결하기 위해 merge와 rebase를 사용하게 되는데 이 경우 동일한 커밋의 사본도 여러개 존재할 뿐아니라 충돌도 발생하고 히스토리가 꼬이는 상황이 생긴다
 
 - 따라서 rebase와 git의 동작 원리를 이해하기 전까지는 가급적 rebase는 아직 원격에 존재하지 않는 로컬 브랜치들에만 적용한다
-
----
-
-### 임시 브랜치 사용하기
-
-- 입문자들이 merge나 rebase할 때 소스가 깨지거나 작업의 내용이 사라지는 걱정이 있는데 이럴 때 임시브랜치를 활용한다
-
-- 원래 작업하려고 했던 브랜치의 커밋으로 임시 브랜치를 만들고 나면 해당 브랜치에서는 아무작업이나 해도 상관이 없다
-
-- 나중에 그 블내치를 삭제하기만 하면 모든 내용이 원상 복구 된다
-
-- 임시 브랜치가 필요 없어지는 git branch -D <브랜치 이름> 명령으로 삭제할 수 있다
-
-```bash
-$ git branch test feature1 # featue1 브랜치에서 임시 브랜치 생성
-
-$ git checkout test
-
-$ echo "abc" > test1.txt
-
-$ git add .
-
-$ git commit -m "임시 커밋"
-
-$ git log --oneline --graph --all -n4
-
-$ git checkout master
-
-$ git branch -D test
-
-$ git log --oneline --graph --all -n3
-```
 
 ---
 
