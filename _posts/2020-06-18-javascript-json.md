@@ -236,5 +236,5 @@ console.log(parseObj.date.getDate());
 - [MDN web docs - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 - [MDN web docs - AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
 - [MDN web docs - JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
-- [JSON 개념 정리 와 활용방법 및 유용한 사이트 공유 JavaScript JSON | 프론트엔드 개발자 입문편 (JavaScript ES6)](https://www.youtube.com/watch?v=FN_D4Ihs3LE&t=219s)
+- [JSON 개념 정리 와 활용방법 및 유용한 사이트 공유 JavaScript JSON ](https://www.youtube.com/watch?v=FN_D4Ihs3LE&t=219s)
 - [poiemaweb - AJAX](https://poiemaweb.com/js-ajax)
