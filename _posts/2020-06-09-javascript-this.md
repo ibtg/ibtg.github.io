@@ -11,7 +11,7 @@ comments: true
 
 ---
 
-- Javascript의 this의 개념을 처음 배울 때 이해가 잘 가지 않는 경우가 있습니다. 그 이유는 this가 자기 자신을 가르키는 Java와 달리 Javascript에서 this는 함수의 호출 방식에 따라서 결정되기 때문입니다.
+- Javascript의 this의 개념을 처음 배울 때 이해가 잘 가지 않는 경우가 있습니다. 그 이유는 this가 만들어진 객체 자기 자신을 가르키는 Java와 달리 Javascript에서 this는 함수의 호출 방식에 따라서 결정되기 때문입니다.
 
 - 즉 this는 자신이 속한 객체를 가르키는 키워드로 상황에 따라 각각 다른 값을 가지게 됩니다.
 

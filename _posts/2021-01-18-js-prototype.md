@@ -247,9 +247,15 @@ console.log(person.married); // undefined
 
     - 그리고 이것은 마치 객체 지향의 상속 개념과 같이 부모 객체의 프로퍼티 또는 메소드를 상속받아 사용할 수 있게 한다.
 
-    - 이러한 부모 객체를 프로토타입 객체(Prototype Object) 또는 줄여서 프로토타입(Prototype)라 한다
+    - 이러한 부모 객체를 프로토타입 객체(Prototype Object) 또는 줄여서 프로토타입(Prototype)이라 하고 자바스크립트에서 이 프로토타입은 상속에 사용된다
 
     - 다시말해 자바스크립트의 모든 객체는 자신의 원형(Prototype)이 되는 객체를 가지며 이를 프로토타입이라고 한다.
+
+    - 자바스크립트는 엄밀히 말하면 객체지향언어라고 할 수 있는데, prototype based로 객체 지향 프로그래밍을 할 수 있기 때문이다
+
+    - ES6의 추가된 class도 prototype 기반의 문법이다
+
+    - Prototype-based Programming이란 객체지향 프로그래밍을 할 수 있는 한가지 방법(a stype of OOP)으로 프로토타입을 사용(that serve as prototype)해서 행동들을 재 사용할 수 있고(behavior reuase(inheritance)), 기존에 있는 객체들을 재 사용(by reusing existing objects)할 수 있다.
 
 ---
 
@@ -349,7 +355,7 @@ console.dir(student);
 
 - 생성된 모든 객체의 프로토타입 객체가 Object.prototype일 뿐 아니라 모든 함수의 프로토타입은 Function.prototype이고, 이 Function.prototype의 프로토타입 객체가 Object.prototype인 것을 통해 알 수 있는 것은 결국은 모든 객체의 부모 객체인 Object.prototype 객체에서 프로토타입 체인이 끝난다는 것이다.
 
-- 따라서 Object.prototype 객체를 프로토타입 체인의 종점(End of prototype chain)이라 한다.
+- 따라서 Object.prototype 객체를 프로토타입 체인의 종점(End of prototype chain)이라 하며 자바스크립트의 모든 객체는 Object.prototype을 상속한다는 것을 알 수 있다
 
 ---
 
