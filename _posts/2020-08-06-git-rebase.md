@@ -297,6 +297,134 @@ $ git log
 
 ```
 
+- 아래의 `98955fc` 커밋 메시지에서 확인할 수 있듯이 하나의 커밋에 두가지 변경사항이 있어 두개의 커밋으로 각각 나눠서 만들고 싶은 경우에도 `rebase`를 사용할 수 있다
+
+```bash
+$ git log
+
+* [2020-11-01] [0ddd7ab] | Add payment UI  (HEAD -> master)
+* [2020-11-01] [e94152f] | .
+* [2020-11-01] [fa7bbd6] | Add payment client
+* [2020-11-01] [1d11be8] | WIP
+* [2020-11-01] [98955fc] | Add payment library and Add payment service
+* [2020-11-01] [707de7d] | Setup Dependencies
+* [2020-11-01] [20ee16f] | Initialise Project
+
+```
+
+```bash
+$ git rebase -i 707de7d
+# 수정하고자 하는 커밋 이전의 해쉬코드
+
+```
+
+- 그리고 다음처럼 pick를 edit으로 수정한다
+
+```bash
+pick Add payment library and Add payment service
+# 아래처럼 수정
+
+e Add payment library and Add payment service
+
+```
+
+- 그 다음 `git log`로 확인해보면 HEAD가 수정하고자 하는 커밋에 있는 것을 확인할 수 있다
+
+- 수정된 내용을 두가지 커밋으로 나누어서 만들기 위해서 우선 커밋을 워킹 디렉토리로 가져와야 한다
+
+```bash
+
+$ git reset HEAD~1
+# mixed 생략가능
+# HEAD가 가리키고 있는 이전으로 포인터를 돌려야한다
+
+$ git status
+# 두가지 변동사항 확인가능
+
+$ git add "수정사항1"
+
+$ git commit -m "Add 수정사항1"
+
+$ git log
+# 수정하고자 하는 이전 커밋 707de7d에서 새로운 커밋 생긴 것 확인
+
+$ git add "수정사항2"
+
+$ git commit -m "Add 수정사항2"
+
+$ git log
+# 수정사항1 커밋 다음에 수정사항 2 커밋 생긴 것 확인가능
+```
+
+```bash
+* [2021-02-04] [299ca85] | Add 수정사항2   (HEAD)
+* [2021-02-04] [6c04f1e] | Add 수정사항1
+| * [2020-11-01] [0ddd7ab] | Add payment UI  (master)
+| * [2020-11-01] [e94152f] | .
+| * [2020-11-01] [fa7bbd6] | Add payment client
+| * [2020-11-01] [1d11be8] | WIP
+| * [2020-11-01] [98955fc] | Add payment library and Add payment service
+|/
+* [2020-11-01] [707de7d] | Setup Dependencies
+* [2020-11-01] [20ee16f] | Initialise Project
+
+```
+
+- 그 다음 계속해서 `rebase`를 진행한다
+
+```bash
+$ git rebase --continue
+```
+
+- 아래처럼 한줄로 깔끔하게 커밋이 정리된 것을 확인할 수 있다
+
+```bash
+* [2020-11-01] [edb3700] | Add payment UI   (HEAD -> master)
+* [2020-11-01] [247c731] | .
+* [2020-11-01] [7ef7762] | Add payment client
+* [2020-11-01] [2ee66cf] | WIP
+* [2021-02-04] [299ca85] | Add 수정사항2
+* [2021-02-04] [6c04f1e] | Add 수정사항1
+* [2020-11-01] [707de7d] | Setup Dependencies
+* [2020-11-01] [20ee16f] | Initialise Project
+
+```
+
+- 아래와 같은 커밋에서 `Setup Dependencies` 부터 `WIP` 커밋까지를 하나로 합치고 싶은 경우 `rebase`의 `sqush`를 사용해서 커밋을 합칠 수 있다
+
+```bash
+* [2020-11-01] [edb3700] | Add payment UI   (HEAD -> master)
+* [2020-11-01] [247c731] | .
+* [2020-11-01] [7ef7762] | Add payment client
+* [2020-11-01] [2ee66cf] | WIP
+* [2021-02-04] [299ca85] | Add 수정사항2
+* [2021-02-04] [6c04f1e] | Add 수정사항1
+* [2020-11-01] [707de7d] | Setup Dependencies
+* [2020-11-01] [20ee16f] | Initialise Project
+
+```
+
+````bash
+$ git rebase -i 20ee16f
+# 수정하고자 하는 커밋 이전 커밋의 해쉬코드
+
+pick 707de7d Setup Dependencies
+s 6c04f1e Add payment library
+s 299ca85 Add payment service
+s 2ee66cf WIP
+# 시작하는 커밋은 pick으로 두고 나머지를 sqush로 바꾸어준다
+# 종료하면 커밋 메시지 수정할 수 있도록 텍스트 에디터 창 열린다
+
+$ git log
+
+# 커밋이 깔끔하게 하나로 합쳐진 것을 확인할 수 있다
+# 합쳐진 커밋 이후의 커밋 내용은 같지만 해쉬코드는 변경되었다
+- [2020-11-01] [1efa353] | Add payment UI (HEAD -> master)
+- [2020-11-01] [3756bec] | .
+- [2020-11-01] [d71f92a] | Add payment client
+- [2020-11-01] [d04e3a4] | Merge commits
+- [2020-11-01] [20ee16f] | Initialise Project
+
 ---
 
 - 3-way병합은 기존 커밋의 변경 없이 새로운 병합 커밋을 하나 생성한다
@@ -357,7 +485,7 @@ $ git push origin master
 $ git log --oneline -n1
 
 $ ls # 작업 디렉토리 상태 확인
-```
+````
 
 ```bash
 # 가지 커밋 만들기
