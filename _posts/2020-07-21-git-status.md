@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'Git status'
+title: 'git status 명령어 정리'
 subtitle: 'git status'
 categories: development
 tags: git
 comments: true
 ---
 
-- Git의 status(상태)에 대해서 공부하고 정리한 글입니다
+- git의 status(상태)에 대해서 공부하고 정리한 글입니다
 
 ---
 
@@ -216,142 +216,6 @@ open .gitignore
 stat .gitignore
 
 ```
-
-- git diff
-
-  - git status를 통해서 파일의 상태를 확인할 수 있지만 어떠한 내용이 변경되었는지 알 수 없다
-
-  - 하지만 git diff를 통해서 어떤 파일의 내용이 수정되었는지를 확인할 수 있다
-
-  - 아무런 옵션이 없으면 워킹 디렉토리에 있는 것만 비교를 해준다
-
-```bash
-
-$ echo hello world > c.txt
-$ echo styling > style.css
-
-$ git add .
-
-# c.txt 파일에 add라는 문자열 추가
-$ echo add >> c.txt
-
-# git diff 명렁어 수행하면 아래와 같은 결과 나온다
-$ git diff
-
----
-diff --git a/c.txt b/c.txt
-index a042389..f5be8ac 100644 # index는 git 내부적으로 파일을 참고할 때 쓰인다
---- a/c.txt
-+++ b/c.txt
-@@ -1 +1,2 @@
-hello world!
-+add
----
-
-
-# a는 이전 버전을 의미하는데 이전 버전이라는 것이 워킹디렉토리에 있는 파일이라면 이전에 커밋된 버전을 의미하고 staging area에 변경된 내용이 있다면 그것이 이전 버전
-
-# -1은 이전 파일을 의미한다
-# 이전 파일에는 hello world
-# +1, 2은 새로운 파일의 두번째 줄 까지 확인하라는 뜻
-# 기존의 hello word가 있던 상태에서 add가 추가되었다는 뜻이다
-
-# staging area있는 것을 확인하고 싶으면 아래 명령어를 실행하고 다음과 같은 결과 나온다
-$ git diff --staged
-
----
-diff --git a/c.txt b/c.txt
-new file mode 100644
-index 0000000..a042389 # index는 git 내부적으로 파일들을 참고할 때 쓰는 것
---- /dev/null # 이전에는 아무것도 없었는데
-+++ b/c.txt # c라는 파일이 추가가 되었고
-@@ -0,0 +1 @@ # 이전에는 아무것도 없었지만 새로운 파일의 첫번째 줄에
-+hello world! # hello word가 추가됨
-diff --git a/style.css b/style.css
-new file mode 100644
-index 0000000..c8658a5
---- /dev/null # 이전에는 아무것도 없었는데
-+++ b/style.css # 이전에는 아무것도 없었지만 새로운 파일의 첫번째 줄에
-@@ -0,0 +1 @@ # styling가 추가됨
-+styling
-(base)
---
-
-# 스테이지란 말은 보통 캐시라는 말과 동의어로 사용하는데 아래처럼 --cached 옵션을 주게되면
-# 동일 하게 git diff --staged 옵션을 사용했을 때와 동일한 결과가 나온다
-$ git diff --cached
-
-
-# git diff의 다양한 옵션을 확인할 수 있다
-$ git diff -h
-
-# 에디터 실행 후 아래와 같은 내용 추가한다
-$ git config --global -e
-
----
-[diff]
- tool = vscode
-
-[difftool "vscode"]
- cmd = code --wait --diff $LOCAL $REMOTE
-
----
-
-# 추가한 후 git difftool 실행하면 vscode 같은 에디터에서 변경된 사항을 확인할 수 있다
-$ git difftool
-
-# staging area의 변경사항을 확인할 수 있다
-$ git difftool --staged
-
-```
-
----
-
-### 원격저장소 관련 명령어(remote, push, pull)
-
-- 로컬 저장소를 원격 저장소에 Push하기 위해서는 원격 저장소를 깃허브에서 만들어 등록한다
-
-```bash
-$ git remote add <원격저장소 이름> <원격 저장소 주소>
-# 원격 저장소를 등록한다
-# 원격 저장소는 여러 개 등록할 수 있지만 같으 별명의 원격저장소는 하나만 가질 수 있다
-# 통상 첫번째 원격저장소를 origin으로 지정한다
-
-$ git remote -v
-# 원격 저장소 목록을 살펴본다
-
-$ git push -u origin master
-# push와 동시에 업스트림 지정
-```
-
-```bash
-$ git remote add origin "원격 저장소 주소"
-
-$ git remote -v
-
-$ git push
-# 에러 발생, [master] 브랜치와 연결된 원격 저장소의 브랜치가 없어서 발생한 오류
-# 이전에는 git push origin master 와 같이 사용
-
-$ git push -u origin master # push와 동시에 업스트림 지정
-
-$ git log --oneline -n1
-# e0044ee (HEAD -> master, origin/master)
-# 지금 HEAD가 가르키는 [master]는 로컬의 [master] 브랜치이고, [origin/maser]는
-# 원격 저장소인 GitHub의 마스터 브랜치이다
-# 현재 상태는 HEAD, master, origin/master 모두 e0044ee 커밋을 가리키고 있다
-
-$ git push # Everything up-to-date
-
-```
-
-- 업스트림(upstream)브랜치는 로컬저장소와 연결된 원격 저장소를 일컫는 단어
-
-- 업스트림 브랜치 설정을 위해서 —set-upstream 또는 -u 옵션을 사용한다
-
-- 그러면 origin 저장소의 [master] 브랜치가 로컬 저장소의 [master] 브랜치의 업스트림으로 지정되어 git push 명령어만으로도 에러 없이 push가 가능해 진다
-
-- 대개 git bash에서 긴 명령은 대시 두 개`(--)` 짧은 명령은 대시 한 개로 시작하는 경우가 많다
 
 ---
 

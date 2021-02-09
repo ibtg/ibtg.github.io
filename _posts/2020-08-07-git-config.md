@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'git config를 사용한 옵션 설정'
+title: 'git config 명령어 정리'
 subtitle: 'git config'
 categories: development
 tags: git
@@ -8,6 +8,102 @@ comments: true
 ---
 
 - git config에 대해서 공부하고 정리한 글입니다
+
+---
+
+- git에 관련된 모든 환경설정이 .gitconfig라는 파일 안에 저장된다
+
+```bash
+$ git config --list
+# 모든 설정 확인 가능
+
+
+$ git config --global -e
+# 파일로 열어보고 싶은 경우, 터미널로 확인가능
+# 텍스트 에디터 연결되어 있으면 텍스트 에디터에서 확인가능
+
+$ code .
+# 텍스트 에디터가 연결되어 있다면 연결된 텍스트 에디터를 바로 열 수 있다
+```
+
+- code를 에디터와 연동해서 사용하는 방법
+
+```bash
+
+$ git config --global core.editor "code"
+# 사용하면 git config --global -e 명령어를 실행하는 경우에
+# 다른 명령어를 수행할 수 있도록 터미널이 계속해서 활성화된다
+
+$ git config --global core.editor "code --wait"
+# 하지만 다음과 같이 설정해주면 git config --global -e 명령어를 실행하는 경우에도
+# 다른 명령어를 수행할 수 없도록 터미널이 wait 도니다
+
+
+# 다음과 같은 설정을 추가해준다
+[user]
+	email = "userId@email.com"
+	name = "userName"
+[push]
+	default = current
+[pull]
+	rebase = true
+
+# push를 할때 default를 current으로 설정해서 로컬에 있는 브랜치 이름이 항상 리무트와 동일하다고 간주한다
+
+# 따라서 push를 할때 일일이 'git push --set-upstream origin master' 옵션을 작성하지 않아도 된다
+
+
+# pull 명령어는 merge와 rebase 옵션을 선택해서 동작할 수 있는데 우리는 rebase를 이용한다
+```
+
+- 사용자에 관련된 정보 설정
+
+```bash
+$ git config --global user.name "userName"
+$ git config --global user.email "userId@email.com"
+```
+
+- `git config` 명령어를 사용해서 설젛한 속성을 확인할 수 있다
+
+```bash
+$ git config user.name
+$ git config user.email
+
+git config --list
+# 모든 설정을 텍스트에디터에서 확인할 수 있다
+
+```
+
+- 운영체제마다 에디터에서 줄바꾸말 때 들어가는 문자열이 달라진다
+
+- 윈도우는 `carriage-return(\r)`과 `line feed(\n)`가 동시에 들어가는 반면에 mac에서는 `line feed(\n)` 하나만 들어가게 된다
+
+- 예를들어 윈도우는 `text\r\n`, mac은 `text\n`
+
+- 이러한 차이점 때문에 git repository를 다양한 운영체제에서 쓰는 경우에는 내가 수정하지 않았음에도 불구하고 줄바꿈 문자열이 달라저서 git history나 git blame을 보는데 문제가 있을 수 있다
+
+- 이것을 수정할 수 있는 속성이 바로 autocrlf 설정
+
+- 윈도우에서 true로 설정하게 되면 git에 저장할 때는 `carriage-return(\r)`을 삭제하게 되고, 다시 git에서 윈도우로 가져올 때는 자동으로 `carriage-return(\r)`을 붙쳐준다
+
+- mac에서는 input으로 설정하게 되면 git에서 받아올 때는 별다른 수정이 일어나지 않지만 저장할 때는 `carriage-return(\r)`을 삭제한다
+
+- mac에서는 `carriage-return(\r)`이 붙지 않음에도 불구하고 이렇게 처리를 해주는 것은 mac에서 이메일을
+  받아온 텍스트를 복하새서 붙여넣을 때 실수로 `carriage-return(\r)`이 들어갈 수있기 때문이다
+
+```bash
+$ git config --global core.autocrlf
+```
+
+- `alias` 명령어를 사용하면 기존의 명령어를 줄여서 사용할 수 있다
+
+```bash
+# 아래와 같은 방법으로 git status를 git st로 줄여서 쓸 수 있다
+$ git config --global alias.st status
+
+# git 관련된 명령어 볼 수 있다
+$ git config --h
+```
 
 ---
 
