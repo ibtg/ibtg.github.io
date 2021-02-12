@@ -63,7 +63,7 @@ $ git config --global user.name "userName"
 $ git config --global user.email "userId@email.com"
 ```
 
-- `git config` 명령어를 사용해서 설젛한 속성을 확인할 수 있다
+- `git config` 명령어를 사용해서 설정한 속성을 확인할 수 있다
 
 ```bash
 $ git config user.name
@@ -71,6 +71,48 @@ $ git config user.email
 
 git config --list
 # 모든 설정을 텍스트에디터에서 확인할 수 있다
+
+```
+
+- `git config` 명령어를 사용해서 단축키 설정을 할 수도 있다
+
+```bash
+
+$ git config --global -e
+# 텍스트에디터 열고 다음과 같이 설정해준다
+
+[alias]
+
+s = status
+
+co = checkout
+ca = !git add -A && git commit -m
+cad = !git add -A && git commit -m "."
+
+hist = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+
+c = commit
+```
+
+- alias를 설정하면 다음과 같이 단축키를 사용할 수 있다
+
+```bash
+$ git cad
+# 빠르게 commit을 .(dot)을 이용해서 할 수 있다
+
+$ git ca "커밋 메시지"
+# 모든 파일을 staging area에 옮긴 다음에 커밋을 한다
+
+
+$ gh
+  # 다음과 같이 단축키를 사용할 수도 있다
+
+$ gsa
+# 다음과 같이 단축키를 사용할 수도 있다
+$ gsl
+# 다음과 같이 단축키를 사용할 수도 있다
+$ gss
+# 다음과 같이 단축키를 사용할 수도 있다
 
 ```
 
