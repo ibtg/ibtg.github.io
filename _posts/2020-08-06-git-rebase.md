@@ -33,6 +33,10 @@ comments: true
 
 - 이 때 사용할 수 있는 것이 rebase이다
 
+- 예를들어, Pull Request를 보냈을 때, 충돌이 일어나다면, 현재 커밋과 Merge하고 싶은 커밋을 미리 내 브랜치에서 Merge해서 Merge 커밋을 만들고 이를 Pull Request로 보낼 수 있지만 불필요한 Merge 커밋이 생길 수 있다
+
+- 이를 해결하기 위해서 Pull Request를 보내고자 하는 브랜치를 가져와서 해당 브랜치의 커밋을 기준으로 rebase를 해준다음에 다시 Pull Request를 해주면 불필요한 Merge 커밋이 생기지 않고 충돌없이 Pull Request를 보낼 수 있다
+
 ---
 
 - 또 다른 상황으로는 다음과 같이 3-way merge가 발생하는 상황이 있다
@@ -184,7 +188,7 @@ $ git merge UI
 
 - 기존의 history를 변경하는 것이기 때문에 서버에 업로드 된 경우 말고 혼자서 작업하는 경우에 유용하게 사용할 수 있는 방법이다
 
-- [`git ammend`](https://ibtg.github.io/development/2020/08/06/git-amend/) 명령어를 사용하면 최신 커밋의 타이틀이나 수정 사항을 업데이트 할 수 있었다
+- [`git amend`](https://ibtg.github.io/development/2020/08/06/git-amend/) 명령어를 사용하면 최신 커밋의 타이틀이나 수정 사항을 업데이트 할 수 있었다
 
 - 이 때 최신 커밋이 아니라 예전 커밋을 업데이트 하고 싶은 경우 `interative rebasing`을 사용할 수 있다
 
@@ -207,9 +211,17 @@ C1 <-- C2 <-- C3* <--C4* <-- C5* <-- C6* <-- C7*
 
 ```bash
 $ git rebase -i "C2 commit hashcode"
-# 텍스트 에디터에서 C2 이후 모든 커밋과 commands 확인할 수 있다
+# 텍스트 에디터에서 아래처럼 C2 이후 모든 커밋과 commands 확인할 수 있다
 
-# p, pick : 커밋을 사용하라는 것
+---
+
+pick "C3 커밋 해쉬코드" "C3 커밋메시지"
+pick "C4 커밋 해쉬코드" "C4 커밋메시지"
+pick "C5 커밋 해쉬코드" "C5 커밋메시지"
+
+---
+
+# p, pick : 그냥 해당 커밋을 사용하는 것
 # r, reword : 커밋을 사용하지만 메시지는 변경한다
 # e, edit : 커밋을 사용하지만 안의 변경사항을 바꾸겠다
 # s, squash : merge 를 통해 커밋을 하나로 묶어주는 것처럼 여러 commit을 하나로 묶어준다
@@ -218,9 +230,6 @@ $ git rebase -i "C2 commit hashcode"
 # b, break: stop here, 여기서 멈춘다
 # d, drop: 해당하는 커밋을 history에 남기지 않고 제거하고 싶을 때
 
-
-# 위 명령어를 사용해서 C3의 커밋메시지를 변경할 수 있다
-pick "C3 commit hashcode" "커밋 메시지"
 
 # 이전의 pick 대신 사용한다 r(reword)를 사용한다
 r "C3 commit hashcode" "커밋 메시지"
@@ -242,7 +251,7 @@ $ git log
 C1 <-- C2 <-- C3 <--C4 <-- C5
 
 # interative rebasing 후
-C1 <-- C2 <-- C3 <--C4 <-- C5
+C1 <-- C2 <--C4* <-- C5*
 
 ```
 
@@ -260,17 +269,16 @@ $ git rebase -i "C2 commit hashcode"
 # d, drop: 해당하는 커밋을 history에 남기지 않고 제거하고 싶을 때
 
 
-# 위 명령어를 사용해서 C3의 커밋메시지를 변경할 수 있다
-pick "C3 commit hashcode" "커밋 메시지"
-
 # 이전의 pick 대신 사용한다 r(drop)를 사용한다
 d "C3 commit hashcode" "커밋 메시지"
 
 ```
 
-- 이 경우에 충돌이 발생할 수 있는데, 예를 들어 이 커밋을 삭제하면서 특정 파일이 삭제되었지만 이어지는 커밋에서 파일을 수정한 기록이 있는 경우에 충돌이 발생한다
+- 이 경우에 충돌이 발생할 수 있다
 
-- 이렇게 rebase를 할 때, 내가 rebase 하는 커밋의 파일을 이어지는 커밋에서 수정을 하면 충돌이 발생한다
+- 예를 들어 이 커밋을 삭제하면서 특정 파일이 삭제되었지만 이어지는 커밋에서 해당 파일을 수정한 기록이 있는 경우에 충돌이 발생한다
+
+- 이렇게 rebase를 할 때, 내가 rebase 하는 커밋의 파일을 이어지는 커밋에서 수정을 한 경우에는 충돌이 발생한다
 
 - 따라서 이러한 경우에는 수동적으로 관리를 해주어야 한다
 
@@ -278,10 +286,11 @@ d "C3 commit hashcode" "커밋 메시지"
 
 $ git status
 # 상태를 확인해보면 자세한 내용을 확인해볼 수 있다
+# interactive rebase in progress; onto
 
 $ git add "파일이름"
-# rebase하는 커밋에서 삭제되었지만 다음 커밋에 있는 파일
-# 파일을 그래도 쓰도록 한다
+# 이전 커밋에서는 해당 파일이 삭제 되었지만
+# 지금 충돌이 난 커밋에서는 파일을 그래도 쓰도록 한다
 
 $ git status
 # 새로운 파일 추가된 것 확인할 수 있다
@@ -298,6 +307,8 @@ $ git log
 ```
 
 - 아래의 `98955fc` 커밋 메시지에서 확인할 수 있듯이 하나의 커밋에 두가지 변경사항이 있어 두개의 커밋으로 각각 나눠서 만들고 싶은 경우에도 `rebase`를 사용할 수 있다
+
+- 아래처럼 아직 서버에 커밋을 올리지 않은 상황에서, `Add payment library and Add payment service`를 각각 한가지 기능에 대한 커밋으로 분리해서 수정해준다
 
 ```bash
 $ git log
@@ -328,9 +339,13 @@ e Add payment library and Add payment service
 
 ```
 
-- 그 다음 `git log`로 확인해보면 HEAD가 수정하고자 하는 커밋에 있는 것을 확인할 수 있다
+- `e` 옵션을 사용해서 저장하고 종료하면 해당하는 부분에서 멈춰있는 것을 확인할 수 있다
+
+- `git log`로 확인해보면 HEAD가 수정하고자 하는 커밋에 있는 것을 확인할 수 있다
 
 - 수정된 내용을 두가지 커밋으로 나누어서 만들기 위해서 우선 커밋을 워킹 디렉토리로 가져와야 한다
+
+- git history에서 나의 워킹 디렉토리로 가져올 수 있는 방법은 `git reset --mixed`이다
 
 ```bash
 
@@ -404,7 +419,7 @@ $ git rebase --continue
 
 ```
 
-````bash
+```bash
 $ git rebase -i 20ee16f
 # 수정하고자 하는 커밋 이전 커밋의 해쉬코드
 
@@ -412,19 +427,23 @@ pick 707de7d Setup Dependencies
 s 6c04f1e Add payment library
 s 299ca85 Add payment service
 s 2ee66cf WIP
+pick Add payment client
+pick .
+pick Add payment UI
 # 시작하는 커밋은 pick으로 두고 나머지를 sqush로 바꾸어준다
+
 # 종료하면 커밋 메시지 수정할 수 있도록 텍스트 에디터 창 열린다
+# 총 4개의 커밋에 대해서 하나의 커밋 메시지로 수정하고 에디터 창을 닫는다
 
 $ git log
-
 # 커밋이 깔끔하게 하나로 합쳐진 것을 확인할 수 있다
 # 합쳐진 커밋 이후의 커밋 내용은 같지만 해쉬코드는 변경되었다
 - [2020-11-01] [1efa353] | Add payment UI (HEAD -> master)
 - [2020-11-01] [3756bec] | .
 - [2020-11-01] [d71f92a] | Add payment client
-- [2020-11-01] [d04e3a4] | Merge commits
+- [2020-11-01] [d04e3a4] | Merge commits # 4개 커밋을 하나로 합친 커밋
 - [2020-11-01] [20ee16f] | Initialise Project
-
+```
 ---
 
 - 3-way병합은 기존 커밋의 변경 없이 새로운 병합 커밋을 하나 생성한다
@@ -485,7 +504,7 @@ $ git push origin master
 $ git log --oneline -n1
 
 $ ls # 작업 디렉토리 상태 확인
-````
+```
 
 ```bash
 # 가지 커밋 만들기
