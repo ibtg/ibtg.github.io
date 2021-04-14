@@ -3,7 +3,7 @@
 # Change `qwtel` to your shortname (used in the front matter to set a page's author, e.g. `author: qwtel`).
 ibtg:
   name: dh kim
-  email: ibtg@gmail.com
+  email: dkmqflx@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -45,7 +45,7 @@ ibtg:
     # pinterest:       <username>
     # foursquare:      <number>
     # yelp:            <string>
-    github: ibtg
+    github: dkmqflx
     # stackoverflow:   <number/username>
     # npm:             <username>
     # hackernews:      <username>
@@ -57,7 +57,7 @@ ibtg:
     # stumbleupon:     <username>
     # paypal:          <username>
     # email:           mailto:snugyun01@gmail.com
-    rss: https://ibtg.github.io/feed.xml
+    rss: https://dkmqflx.github.io/feed.xml
 
 # Another author
 mdo:
