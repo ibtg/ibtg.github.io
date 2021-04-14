@@ -1,3 +1,3 @@
 ## Github Blog
 
-- [https://ibtg.github.io](https://ibtg.github.io)
+- [https://dkmqflx.github.io](https://dkmqflx.github.io)
