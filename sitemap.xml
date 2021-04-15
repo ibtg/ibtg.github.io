@@ -1,762 +1,584 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://dkmqflx.github.io/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://dkmqflx.github.io/</loc>
+	<lastmod>2021-04-15T17:02:12+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/02/12/git-blame/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/development/2021/02/12/git-blame/</loc>
+	<lastmod>2021-04-15T17:02:13+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/category/development/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/category/development/</loc>
+	<lastmod>2021-04-15T17:02:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/development-git/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/development-git/</loc>
+	<lastmod>2021-04-15T17:02:16+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/02/12/git-bisect/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/development/2021/02/12/git-bisect/</loc>
+	<lastmod>2021-04-15T17:02:16+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/02/09/git-diff/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/development/2021/02/09/git-diff/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/28/git-reflog/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/28/git-reflog/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/26/git-restore/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/26/git-restore/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/page-2/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/page-2/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/category/frontend/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/category/frontend/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/frontend-javascript/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/frontend-javascript/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/frontend-html/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/frontend-html/</loc>
+	<lastmod>2021-04-15T17:02:17+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/frontend-css/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/frontend-css/</loc>
+	<lastmod>2021-04-15T17:02:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/frontend-react/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/frontend-react/</loc>
+	<lastmod>2021-04-15T17:02:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/frontend-sass/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/frontend-sass/</loc>
+	<lastmod>2021-04-15T17:02:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/category/algorithm/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/category/algorithm/</loc>
+	<lastmod>2021-04-15T17:02:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/algorithm-programmers/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/algorithm-programmers/</loc>
+	<lastmod>2021-04-15T17:02:18+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/algorithm-boj/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/algorithm-boj/</loc>
+	<lastmod>2021-04-15T17:02:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/category/cs/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/category/cs/</loc>
+	<lastmod>2021-04-15T17:02:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/cs-os/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/cs-os/</loc>
+	<lastmod>2021-04-15T17:02:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/tag/cs-oop/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/tag/cs-oop/</loc>
+	<lastmod>2021-04-15T17:02:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/category/design/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/category/design/</loc>
+	<lastmod>2021-04-15T17:02:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/about/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://dkmqflx.github.io/about/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/25/git-stash/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/25/git-stash/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/17/git-tag/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/17/git-tag/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/16/git-log/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/16/git-log/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2021/01/15/git-rm-mv/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2021/01/15/git-rm-mv/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/14/git-operation/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/14/git-operation/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/07/git-config/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/07/git-config/</loc>
+	<lastmod>2021-04-15T17:02:20+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/06/git-revert/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/06/git-revert/</loc>
+	<lastmod>2021-04-15T17:02:21+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/06/git-reset/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/06/git-reset/</loc>
+	<lastmod>2021-04-15T17:02:21+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/06/git-rebase/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/06/git-rebase/</loc>
+	<lastmod>2021-04-15T17:02:21+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/06/git-cherrypick/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/06/git-cherrypick/</loc>
+	<lastmod>2021-04-15T17:02:21+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/06/git-amend/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/06/git-amend/</loc>
+	<lastmod>2021-04-15T17:02:21+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/03/git-fork/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/03/git-fork/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/08/02/git-branch-merge/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/08/02/git-branch-merge/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/07/21/git-status/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/07/21/git-status/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/development/2020/07/20/git-basic/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/development/2020/07/20/git-basic/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/23/react-setstate/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/23/react-setstate/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/22/react-usecallback-memo/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/22/react-usecallback-memo/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/22/react-purecomponent/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/22/react-purecomponent/</loc>
+	<lastmod>2021-04-15T17:02:22+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/18/js-prototype/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/18/js-prototype/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/page-3/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/page-3/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/14/arrow/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/14/arrow/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2021/01/13/ec/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2021/01/13/ec/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/22/javascript-cbfunc/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/22/javascript-cbfunc/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/21/css-rmrem/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/21/css-rmrem/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/16/crp/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/16/crp/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/14/jscssom/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/14/jscssom/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/10/jsdom/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/10/jsdom/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/09/raf/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/09/raf/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/07/eventloop/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/07/eventloop/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/06/jsruntime-clickrender/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/06/jsruntime-clickrender/</loc>
+	<lastmod>2021-04-15T17:02:23+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/05/jsruntime-microq/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/05/jsruntime-microq/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/09/02/jsengine/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/09/02/jsengine/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/25/reactcycle/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/25/reactcycle/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/22/react-ref/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/22/react-ref/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/21/javascript-eventdelegation/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/21/javascript-eventdelegation/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/16/list-indent/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/16/list-indent/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/06/react-redux/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/06/react-redux/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/08/01/html-windowbrowser/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/08/01/html-windowbrowser/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/20/sass-rules/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/20/sass-rules/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/17/sass-extend/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/17/sass-extend/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/16/sass-mixin/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/16/sass-mixin/</loc>
+	<lastmod>2021-04-15T17:02:24+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/16/sass-if-for/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/16/sass-if-for/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/13/sass-start/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/13/sass-start/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/09/css-flex/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/09/css-flex/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/08/javascript-redux/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/08/javascript-redux/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/06/js-immutable/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/06/js-immutable/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/07/06/css-position/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/07/06/css-position/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/28/react-stylecomponent/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/28/react-stylecomponent/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/28/react-reactrouterdom/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/28/react-reactrouterdom/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/28/css-bem/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/28/css-bem/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/27/react-hooks/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/27/react-hooks/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/27/javascript-promise/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/27/javascript-promise/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/27/javascript-asyncawait/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/27/javascript-asyncawait/</loc>
+	<lastmod>2021-04-15T17:02:25+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/24/javascript-class/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/24/javascript-class/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/21/react-eventhandlerError/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/21/react-eventhandlerError/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/19/javascript-variable/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/19/javascript-variable/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/18/javascript-json/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/18/javascript-json/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/15/javascript-callback/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/15/javascript-callback/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/14/javascript-closure/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/14/javascript-closure/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/13/html-defer_async/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/13/html-defer_async/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/frontend/2020/06/09/javascript-this/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/frontend/2020/06/09/javascript-this/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr22/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr22/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr21/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr21/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr20/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/12/18/al-pr20/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/12/17/al-boj7/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/12/17/al-boj7/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/11/06/al-boj6/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/11/06/al-boj6/</loc>
+	<lastmod>2021-04-15T17:02:26+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/11/06/al-boj5/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/11/06/al-boj5/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/11/05/al-boj4/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/11/05/al-boj4/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr19/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr19/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr18/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr18/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr17/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/30/al-pr17/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/26/al-pr16/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/26/al-pr16/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/24/al-pr15/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/24/al-pr15/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/23/al-p314/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/23/al-p314/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/22/al-p313/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/22/al-p313/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/20/al-pr12/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/20/al-pr12/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/10/al-boj3/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/10/al-boj3/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/08/al-boj2/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/08/al-boj2/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/10/08/al-boj1/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/10/08/al-boj1/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/28/al-pr11/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/28/al-pr11/</loc>
+	<lastmod>2021-04-15T17:02:27+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr9/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr9/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr8/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr8/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr7/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr7/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr6/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr6/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr10/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/25/al-pr10/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/24/al-pr5/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/24/al-pr5/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/22/al-pr4/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/22/al-pr4/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/22/al-pr3/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/22/al-pr3/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/21/al-pr2/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/21/al-pr2/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/algorithm/2020/09/18/al-pr1/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/algorithm/2020/09/18/al-pr1/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/cs/2020/09/25/oop-feature/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/cs/2020/09/25/oop-feature/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/cs/2020/08/31/cs-thread/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://dkmqflx.github.io/cs/2020/08/31/cs-thread/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.1</priority>
 </url>
 <url>
-  <loc>https://dkmqflx.github.io/page-4/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://dkmqflx.github.io/page-4/</loc>
+	<lastmod>2021-04-15T17:02:28+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
-<url>
-  <loc>https://dkmqflx.github.io/page-5/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-6/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.33</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-7/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.26</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-8/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.21</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-9/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.17</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-10/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.13</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-11/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.11</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-12/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.09</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-13/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.07</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-14/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.05</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-15/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.04</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/07/19/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.04</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-16/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.04</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/07/12/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.03</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/07/05/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.03</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/06/28/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.03</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-17/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.03</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-18/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.02</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-19/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.02</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/06/21/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-20/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/06/14/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-21/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/06/07/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/essay/2020/06/01/first/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/05/31/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-22/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/05/24/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/05/17/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/05/10/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/05/03/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/04/26/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/page-23/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-<url>
-  <loc>https://dkmqflx.github.io/til/2020/04/19/til/</loc>
-  <lastmod>2021-04-15T13:33:54+00:00</lastmod>
-  <priority>0.01</priority>
-</url>
-
-
 </urlset>
