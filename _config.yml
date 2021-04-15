@@ -22,7 +22,7 @@ description: >
 # This should be the same author as first entry in `_data/authors.yml`
 author:
   name: dh kim
-  email: ibtg@gmail.com
+  email: dkmqflx@gmail.com
 
 # Fallback image and color
 image: /assets/img/background.jpg
@@ -43,7 +43,7 @@ google_fonts: Lato
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Anaylics from your page, remove the line below.
-google_analytics: UA-168136654-1
+google_analytics: G-648LHHBHC6
 
 # Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
 disqus_shortname: https-ibtg-github-io
