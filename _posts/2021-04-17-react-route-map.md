@@ -46,17 +46,22 @@ const App = () => {
 
 // route.js
 
-export const routeList = [
-  { label: "login", link: "/login", component: LoginPage },
-  { label: "register", link: "/register", component: RegisterPage }
-];
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import UploadPage from './pages/UploadPage'
+import MyPage from './pages/MyPage'
 
+
+export const routeList = [
+    { label: "login", link: "/login", component: LoginPage },
+    { label: "register", link: "/register", component: RegisterPage }
+  ];
+  
 export const navList = [
   { label: "upload", link: "/upload", component: UploadPage },
   { label: "mypage", link: "/mypage", component: MyPage },
 ];
-
-
+  
 ```
 
 ```jsx
@@ -71,17 +76,47 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         {routeList.map(route => (
-          <Route key={route.label} exact path={route.link} component={route.component} />
+          <Route key={route.label} exact path={route.path} component={route.component} />
         ))}
 
         {navList.map(route => (
-          <LoginRoute key={route.label} exact path={route.link} component={route.component} />
+          <Route key={route.label} exact path={route.path} component={route.component} />
         ))}
 
       </Switch>
     </BrowserRouter>
   );
 };
+
+export default App;
+
+
+```
+
+- 그리고 아래처럼 `rest` 문법을 사용하면 직접 `path`와 `component`를 입력하지 않아도 된다
+
+```jsx
+import { BrowserRouter, Route, Switch  } from "react-router-dom";
+import { routeList, navList } from './route'
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        {routeList.map(route => (
+          <Route key={route.label} exact {...route} />
+        ))}
+
+        {navList.map(route => (
+          <Route key={route.label} exact {...route} />
+        ))}
+
+      </Switch>
+    </BrowserRouter>
+  );
+};
+
+export default App;
 
 
 ```
