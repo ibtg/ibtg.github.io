@@ -194,4 +194,4 @@ export default App;
 - [Pass props to a component rendered by React Router v4](https://ui.dev/react-router-v4-pass-props-to-components/)
 - [React Router docs](https://reactrouter.com/web/api/Route/render-func)
 - [Using the Route render prop in React](https://dev.to/cesareferrari/using-the-route-render-prop-in-react-k5a)
-- [리액트 라우터 <Route> 컴포넌트의 render prop 활용하기](https://velog.io/@dblee/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9A%B0%ED%84%B0-Route-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-render-prop-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [리액트 라우터 <Route> 컴포넌트의 render prop 활용하기](https://url.kr/xu3n5r)
