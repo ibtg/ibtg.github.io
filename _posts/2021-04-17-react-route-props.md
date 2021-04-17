@@ -101,12 +101,15 @@ const App = () => {
 - 즉, 기존의 컴포넌트를 업데이트 하는 대신, 기존의 컴포넌트를 unmounting하고 새로운 컴포넌를 mounting하기 때문에 성능상 좋은 방법이 아니다.
 
 
-```shell
-When you use component (instead of render or children, below) the router uses React.createElement to create a new React element from the given component. 
-That means if you provide an inline function to the component prop, you would create a new component every render. 
-This results in the existing component unmounting and the new component mounting instead of just updating the existing component. 
+<blockquote>
+When you use component (instead of render or children, below) 
+the router uses React.createElement to create a new React element from the given component. 
+That means if you provide an inline function to the component prop, 
+you would create a new component every render. 
+This results in the existing component unmounting and the new component mounting 
+instead of just updating the existing component. 
 When using an inline function for inline rendering, use the render or the children prop (below).
-```
+</blockquote>
 
 
 - 이러한 문제를 `render prop`을 사용해서 해결할 수 있다
@@ -191,4 +194,4 @@ export default App;
 - [Pass props to a component rendered by React Router v4](https://ui.dev/react-router-v4-pass-props-to-components/)
 - [React Router docs](https://reactrouter.com/web/api/Route/render-func)
 - [Using the Route render prop in React](https://dev.to/cesareferrari/using-the-route-render-prop-in-react-k5a)
-- [[리액트 라우터]<Route> 컴포넌트의 render prop 활용하기](https://velog.io/@dblee/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9A%B0%ED%84%B0-Route-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-render-prop-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [리액트 라우터 <Route> 컴포넌트의 render prop 활용하기](https://velog.io/@dblee/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9A%B0%ED%84%B0-Route-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-render-prop-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0)
