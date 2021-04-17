@@ -136,6 +136,7 @@ $ git branch [-v]
 # 표시된 브랜치 중에서 이름 왼쪽에 * 가 붙어 있으면 HEAD 브랜치이다
 
 $ git branch --all
+$ git branch -a
 # github와 같은 서버에 연결된 repository 라면 서버에 있는 모든 branch 정보를 보여준다
 
 $ git branch [-f] <브랜치이름> [커밋체크섬]
@@ -158,6 +159,16 @@ $ ls
 $ git checkout -b <브랜치이름> <커밋 체크섬>
 $ git switch -C <브랜치이름>
 # 특정 커밋에서 브랜치를 새로 생성하고 동시에 체크아웃 까지 한다
+
+
+
+$ git checkout -t <원격저장소 branch>
+# t 옵션을 사용하면 원격 저장소의 branch 가져올 수 있다
+# t 옵션과 원격 저장소의 branch 이름을 입력하면 로컬의 동일한 이름의 branch를 생성하면서 해당 branch로 checkout을 한다.
+
+
+$ git checkout -t origin/features/search
+# 원격 저장소의 feature/search라는 브랜치를 가져오고 싶다면, 다음과 같은 명령어 사용한다
 
 $ git merge <대상 브랜치>
 # 현재 브랜치와 대상 브랜치를 병합할 때 사용
