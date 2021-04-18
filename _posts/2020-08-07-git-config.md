@@ -26,17 +26,18 @@ $ code .
 # 텍스트 에디터가 연결되어 있다면 연결된 텍스트 에디터를 바로 열 수 있다
 ```
 
-- code를 에디터와 연동해서 사용하는 방법
+- code를 에디터와 연동해서 사용하는 방법은 `command + shift + p`를 눌러 `Install 'code' command IN PATH` 를 선택해준다
 
 ```bash
 
 $ git config --global core.editor "code"
-# 사용하면 git config --global -e 명령어를 실행하는 경우에
+# .gitconfig 파일이 열리는 동시에 
 # 다른 명령어를 수행할 수 있도록 터미널이 계속해서 활성화된다
 
+
 $ git config --global core.editor "code --wait"
-# 하지만 다음과 같이 설정해주면 git config --global -e 명령어를 실행하는 경우에도
-# 다른 명령어를 수행할 수 없도록 터미널이 wait 도니다
+# 하지만 다음과 같이 설정해주면 파일이 열린 동안에는
+# 다른 명령어를 수행할 수 없도록 터미널이 wait 된다
 
 
 # 다음과 같은 설정을 추가해준다
@@ -74,11 +75,21 @@ git config --list
 
 ```
 
+- repository 마다 다른 `user.name`과 `user.email`을 설정하고 싶은 경우 `--local` 옵션을 사용한다
+
+```bash
+git config --local user.name "userName"
+git config --local user.email "userId@email.com"
+
+```
+
+
 - `git config` 명령어를 사용해서 단축키 설정을 할 수도 있다
 
 ```bash
 
 $ git config --global -e
+# 다음과 같은 명령어를 사용하면 터미널에서 설정을 확인할 수 있다
 # 텍스트에디터 열고 다음과 같이 설정해준다
 
 [alias]
@@ -226,3 +237,4 @@ $ git config --h
 ## Reference
 
 - [팀 개발을 위한 Git, Github 시작하기](http://www.yes24.com/Product/Goods/85382769)
+- [git docs - config](https://git-scm.com/docs/git-config)
