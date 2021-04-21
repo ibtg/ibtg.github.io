@@ -89,6 +89,6 @@ comments: true
 
 - [MDN web docs - details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 - [MDN web docs - summary](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
-- [HTML <details> 태그](http://www.tcpschool.com/html-tags/details)
+- [HTML details 태그](http://www.tcpschool.com/html-tags/details)
 - [ontoggle Event](https://www.w3schools.com/jsref/event_ontoggle.asp)
 
