@@ -242,7 +242,10 @@ async function print() {
 
 - 이렇게 병렬적으로 프로미스를 실행하는 경우 프로미스에서 제공하는 api를 사용해서 더 간결한 코드로 나타낼 수 있습니다.
 
+- `Promise.all` 은 여러 개의 프라미스를 동시에 실행시키고 모든 프라미스가 준비될 때까지 기다리는 상황에서 유용하게 사용할 수 있다 
+
 - `Promise.all`메서드에 프로미스를 담은 배열을 전달하게 되면, 배열에 있는 모든 프로미스들이 완료된 후 새로운 프로미스가 fulfilled 됩니다.
+
 - 이 때 배열에 있는 각각의 프로미스의 결과값을 담은 배열이 새로운 새로운 프로미스의 결과값이 됩니다.
 
 ```javascript
@@ -276,3 +279,5 @@ print().then(console.log);
 - [MDN web docs - await](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/await)
 - [MDN web docs - Promise.all](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 - [https://www.youtube.com/watch?v=aoQSOZfz3vQ](https://www.youtube.com/watch?v=aoQSOZfz3vQ)
+- [for loop vs .map for making multiple API calls](https://dev.to/askrishnapravin/for-loop-vs-map-for-making-multiple-api-calls-3lhd)
+- [프라미스 API](https://ko.javascript.info/promise-api)
