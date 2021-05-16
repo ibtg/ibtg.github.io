@@ -196,7 +196,18 @@ const User = memo(({user, onAdd }) => {
 
 ```
 
+- 따라서 아래 코드와 같이 직접적으로 state 값을 수정하는 것이 아니라, 새로운 값을 return해서 state 값을 수정하도록 해야 한다.
 
+
+```jsx
+ const onAdd = useCallback(
+    (id) => {
+      setUsers(users.map(user => user.id === id ? {...user, count:user.count+1} : user))
+    },
+    [],
+  )
+
+```
 ---
 
 ## Reference
