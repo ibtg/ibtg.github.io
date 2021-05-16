@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'React.memo와 useState를 사용한 함수형 업데이트'
+title: 'memo와 useState를 사용한 함수형 업데이트'
 subtitle: 'memo useState'
 categories: frontend
 tags: react
 comments: true
 ---
 
-- React.memo와 useState를 사용한 함수형 업데이트에 대해 정리한 글입니다 
+- memo와 useState를 사용한 함수형 업데이트에 대해 정리한 글입니다 
 
 ---
 
