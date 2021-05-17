@@ -264,5 +264,6 @@ export default App;
 ## Reference
 
 - [리액트 공식 문서](https://reactjs.org/docs/hooks-reference.html#usereducer)
-- [ React hooks 심화 useReducer, useContext](https://www.youtube.com/watch?v=hLm9J09wiOI)
+- [React hooks 심화 useReducer, useContext](https://www.youtube.com/watch?v=hLm9J09wiOI)
+- [20. useReducer 를 사용하여 상태 업데이트 로직 분리하기](https://react.vlpt.us/basic/20-useReducer.html)
 - [21. 커스텀 Hooks 만들기](https://react.vlpt.us/basic/21-custom-hook.html)
