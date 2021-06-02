@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Context API를 사용해서 상태 관리하기'
-subtitle: 'react context'
+title: "Context API를 사용해서 상태 관리하기"
+subtitle: "react context"
 categories: frontend
 tags: react
 comments: true
@@ -44,19 +44,18 @@ console.log(FirstContext)
 ```jsx
 // App.js
 
-import { createContext } from 'react';
-import LoginPage from './pages/LoginPage'
+import { createContext } from "react";
+import LoginPage from "./pages/LoginPage";
 
-export const LoginPageContext = createContext() // Conext를 만들고 export 해준다 
+export const LoginPageContext = createContext(); // Conext를 만들고 export 해준다
 
 function App() {
-  const value = "LoginContext"
+  const value = "LoginContext";
   return (
     <div className="App">
       <LoginPageContext.Provider value={value}>
         <LoginPage></LoginPage>
       </LoginPageContext.Provider>
-
     </div>
   );
 }
@@ -69,22 +68,20 @@ export default App;
 ```jsx
 // LoginPage.js
 
-import React from 'react'
-import { LoginPageContext } from '../App' // 사용할 Context 를 import 해준다
+import React from "react";
+import { LoginPageContext } from "../App"; // 사용할 Context 를 import 해준다
 
 const LoginPage = () => {
+  return (
+    <div>
+      <LoginPageContext.Consumer>
+        {(value) => <div>{value}</div>}
+      </LoginPageContext.Consumer>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <LoginPageContext.Consumer>
-                {value => <div>{value}</div> }
-            </LoginPageContext.Consumer>
-
-        </div>
-    )
-}
-
-export default LoginPage
+export default LoginPage;
 ```
 
 - 만약 아래처럼 Provider로 컴포넌트가 감싸여지지 않은 상태라면, LoginPage 컴포넌트에서 value 값을 조회하면 "defaultContext"가 출력된다
@@ -92,13 +89,13 @@ export default LoginPage
 ```jsx
 // App.js
 
-import { createContext } from 'react';
-import LoginPage from './pages/LoginPage'
+import { createContext } from "react";
+import LoginPage from "./pages/LoginPage";
 
-export const LoginPageContext = createContext("defaultContext")
+export const LoginPageContext = createContext("defaultContext");
 
 function App() {
-  const value = "LoginContext"
+  const value = "LoginContext";
   return (
     <div className="App">
       <LoginPage></LoginPage>
@@ -114,25 +111,21 @@ export default App;
 ```jsx
 // LoginPage.js
 
-import React, { useContext } from 'react'
-import { LoginPageContext } from '../App'
+import React, { useContext } from "react";
+import { LoginPageContext } from "../App";
 
 const LoginPage = () => {
-    const value = useContext(LoginPageContext)
+  const value = useContext(LoginPageContext);
 
-    return (
-        <div>
-            {value}
-        </div>
-    )
-}
+  return <div>{value}</div>;
+};
 
-export default LoginPage
+export default LoginPage;
 ```
 
-- useContext가 가지는 이점은 이전에는  여러개의 context의 값을 전달받으려면, 해당 컨텍스트의 consumer를 중첩으로 사용해서 값을 전달받아야 했지만, useContext를 사용하면 중첩 없이 간편하게 context를 여러개 사용할 수 있다
+- useContext가 가지는 이점은 이전에는 여러개의 context의 값을 전달받으려면, 해당 컨텍스트의 consumer를 중첩으로 사용해서 값을 전달받아야 했지만, useContext를 사용하면 중첩 없이 간편하게 context를 여러개 사용할 수 있다
 
-- 이처럼 Context API를 사용해서 전역 상태 관리를 할 수 있는데, 이 때 상태 관리를 위한 hook인  useReducer와 함께 사용하면 더 유용하게 사용할 수 있다.
+- 이처럼 Context API를 사용해서 전역 상태 관리를 할 수 있는데, 이 때 상태 관리를 위한 hook인 useReducer와 함께 사용하면 더 유용하게 사용할 수 있다.
 
 - 아래는 + 버튼을 누르면 1씩 증가하고, - 버튼을 누르면 1씩 감소하는 기능을 구현하기 위한 코드이다
 
@@ -141,43 +134,44 @@ export default LoginPage
 ```jsx
 // numberReducer.js
 
-export const initialValue = {number: 0}
+export const initialValue = { number: 0 };
 
 export const numberReducer = (state, action) => {
-    switch (action.type) {
-        case 'ADD': 
-        return {
-            ...state,
-            number: state.number +1
-        }
-            break;
-        case 'MINUS':
-            return{
-                ...state,
-                number:state.number-1
-            }    
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case "ADD":
+      return {
+        ...state,
+        number: state.number + 1,
+      };
+      break;
+    case "MINUS":
+      return {
+        ...state,
+        number: state.number - 1,
+      };
+    default:
+      return state;
+  }
+};
 ```
 
 ```jsx
 // App.js
 
-import { createContext, useReducer } from 'react';
-import LoginPage from './pages/LoginPage'
-import { initialValue , numberReducer} from './pages/numberReducer'
+import { createContext, useReducer } from "react";
+import LoginPage from "./pages/LoginPage";
+import { initialValue, numberReducer } from "./pages/numberReducer";
 
-export const LoginPageContext = createContext("defaultContext")
+export const LoginPageContext = createContext("defaultContext");
 
 function App() {
   return (
     <div className="App">
-      <LoginPageContext.Provider value={ useReducer(numberReducer, initialValue)}>
+      <LoginPageContext.Provider
+        value={useReducer(numberReducer, initialValue)}
+      >
         <LoginPage></LoginPage>
       </LoginPageContext.Provider>
-
     </div>
   );
 }
@@ -192,26 +186,26 @@ export default App;
 ```jsx
 // LoginPage.js
 
-import React, { useContext } from 'react'
-import { LoginPageContext } from '../App'
+import React, { useContext } from "react";
+import { LoginPageContext } from "../App";
 
 const LoginPage = () => {
-    const [state, dispatch] = useContext(LoginPageContext)
+  const [state, dispatch] = useContext(LoginPageContext);
 
-    return (
-        <div>
-            <div>
-                <span>{state.number}</span>
-            </div>
-            <div>
-                <button onClick={()=>dispatch({type:'ADD'})} >+</button>
-                <button onClick={()=>dispatch({type:'MINUS'})}>-</button>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <div>
+        <span>{state.number}</span>
+      </div>
+      <div>
+        <button onClick={() => dispatch({ type: "ADD" })}>+</button>
+        <button onClick={() => dispatch({ type: "MINUS" })}>-</button>
+      </div>
+    </div>
+  );
+};
 
-export default LoginPage
+export default LoginPage;
 ```
 
 - context API는 재사용한 컴포넌트를 만드는데 사용할 수 도 있다.
@@ -220,9 +214,9 @@ export default LoginPage
 
 - 비슷한 기능, UI를 가진 컴포넌트를 반복적으로 만드는 것은 비 효율적이기 때문에 재사용이 가능한 컴포넌트를 만들고 이를 사용하는 것이 좋다
 
-- 예를 들어 accordian 기능을 구현하는 경우,  accordian 컴포넌트를 만든 다음 accordian 기능이 필요한 컴포넌트에서 accordian 컴포넌트를 import 한 다음 return 부분에 accordian 컴포넌트를 작성해주면 된다.
+- 예를 들어 accordian 기능을 구현하는 경우, accordian 컴포넌트를 만든 다음 accordian 기능이 필요한 컴포넌트에서 accordian 컴포넌트를 import 한 다음 return 부분에 accordian 컴포넌트를 작성해주면 된다.
 
-- 하지만 accordian 내부적인 값이 있고 이 값을 사용해야 accordian 기능을 구현해야 하는 컴포넌트에서 사용해야 한다면, props로 값을 전달해주어야 하기 때문에  accordian 컴포넌트를 import 해서 사용할 수 있는 것이 아니라  해당 컴포넌트는 accordian 컴포넌트의 return 부분에 작성되는, 즉, accordian 컴포넌트의 하위 컴포넌트가 되어야 한다.
+- 하지만 accordian 내부적인 값이 있고 이 값을 사용해야 accordian 기능을 구현해야 하는 컴포넌트에서 사용해야 한다면, props로 값을 전달해주어야 하기 때문에 accordian 컴포넌트를 import 해서 사용할 수 있는 것이 아니라 해당 컴포넌트는 accordian 컴포넌트의 return 부분에 작성되는, 즉, accordian 컴포넌트의 하위 컴포넌트가 되어야 한다.
 
 - 그렇다면 accordian 컴포넌트는 재사용한 컴포넌트가 불가능하게 된다
 
@@ -237,13 +231,11 @@ export default LoginPage
 ```jsx
 // Accordian.jsx
 
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext } from "react";
 
-const accordianContext = createContext(null)
-const UseAccordian = () => useContext(accordianContext)
-
+const accordianContext = createContext(null);
+const UseAccordian = () => useContext(accordianContext);
 ```
-
 
 - 그리고 공통의 Accordian을 위한 컴포넌트를 정의한다.
 
@@ -254,67 +246,63 @@ const UseAccordian = () => useContext(accordianContext)
 ```jsx
 // Accordian.jsx
 
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from "react";
 
-const accordianContext = createContext(null)
-const UseAccordian = () => useContext(accordianContext)
+const accordianContext = createContext(null);
+const UseAccordian = () => useContext(accordianContext);
 
-export const Accordian = ({children}) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const value = {isOpen, setIsOpen}
-    
-    return (
-        <accordianContext.Provider value={value}>
-            {children}
-        </accordianContext.Provider>
-    )
-}
+export const Accordian = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const value = { isOpen, setIsOpen };
+
+  return (
+    <accordianContext.Provider value={value}>
+      {children}
+    </accordianContext.Provider>
+  );
+};
 ```
 
 - 그리고 전달받은 AccordianHeader, AccordianBody 컴포넌트를 정의해준다.
 
-- AccordianHeader 에서  Context.Provider로 전달된 값을 destructuring으로 받아온 다음 onClick 이벤트로 isOpen 값을 바꿀 수 있도록 해주면, button을 클릭 할 때 마다 AccordianBody의 내용이 보여지거나 숨겨지게 된다
+- AccordianHeader 에서 Context.Provider로 전달된 값을 destructuring으로 받아온 다음 onClick 이벤트로 isOpen 값을 바꿀 수 있도록 해주면, button을 클릭 할 때 마다 AccordianBody의 내용이 보여지거나 숨겨지게 된다
 
 ```jsx
 // Accordian.jsx
 
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState } from "react";
 
-const accordianContext = createContext(null)
-const UseAccordian = () => useContext(accordianContext)
+const accordianContext = createContext(null);
+const UseAccordian = () => useContext(accordianContext);
 
-export const Accordian = ({children}) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const value = {isOpen, setIsOpen}
-    
-    return (
-        <accordianContext.Provider value={value}>
-            {children}
-        </accordianContext.Provider>
-    )
-}
+export const Accordian = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const value = { isOpen, setIsOpen };
 
-export const AccordianHeader = ({children}) => {
-    const {isOpen, setIsOpen} = UseAccordian()
-    return (
-        <div>
-            <div>{children}</div>
-            <button onClick={()=>setIsOpen(!isOpen)}>Header Open</button>
-        </div>
-    )
-}
+  return (
+    <accordianContext.Provider value={value}>
+      {children}
+    </accordianContext.Provider>
+  );
+};
 
-export const AccordianBody = ({children}) => {
-    const {isOpen } = UseAccordian()
+export const AccordianHeader = ({ children }) => {
+  const { isOpen, setIsOpen } = UseAccordian();
+  return (
+    <div>
+      <div>{children}</div>
+      <button onClick={() => setIsOpen(!isOpen)}>Header Open</button>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            {isOpen && <div>{children}</div> }
-        </div>
-    )
-}
+export const AccordianBody = ({ children }) => {
+  const { isOpen } = UseAccordian();
 
-export default Accordian
+  return <div>{isOpen && <div>{children}</div>}</div>;
+};
+
+export default Accordian;
 ```
 
 - 이처럼 Context API를 사용해서 UI 재사용을 위한 컴포넌트를 작성할 수 있고 텍스트 변경 및 스타일 변경도 자유롭게 할 수 있다
@@ -329,3 +317,5 @@ export default Accordian
 - [React hooks 심화 (useReducer, useContext)](https://www.youtube.com/watch?v=hLm9J09wiOI)
 - [contextAPI 로 리액트 상태 관리 레벨업 하기!](https://www.youtube.com/watch?v=sqz45pnvJHg)
 - [contextAPI + styled-components 로 재사용 컴포넌트 만들기](https://www.youtube.com/watch?v=5RhCxzmp2yw)
+- [02. Context API 를 활용한 상태 관리](https://react.vlpt.us/mashup-todolist/02-manage-state.html)
+- [22. Context API 를 사용한 전역 값 관리](https://react.vlpt.us/basic/22-context-dispatch.html)
